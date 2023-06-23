@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@400;500;700&display=swap");
+
+* {
+  background-color: #2e2e2e;
+  font-family: "Teko", sans-serif;
 }
 
 .App-logo {
