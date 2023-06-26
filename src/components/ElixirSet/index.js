@@ -20,6 +20,7 @@ const ElixirSet = () => {
             title={card.title}
             text={card.text}
             cost={card.cost}
+            imageSrc={card.src}
             key={card.value}
           ></ElixirCard>
         ))}
