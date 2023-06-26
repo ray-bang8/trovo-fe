@@ -1,9 +1,16 @@
 .elixir-set {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
 }
 
 .elixir-set__text {
   text-align: center;
   color: #fff;
+}
+
+.elixir-set__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
