@@ -1,9 +1,10 @@
+import { useState } from "react";
 import ElixirCard from "../ElixirCard";
+import Modal from "../Modal";
 import utilConstants from "../../utils/constants";
 import s from "./index.module.scss";
 
 const ElixirSet = () => {
-  utilConstants.elixirCards.map((elem) => console.log(elem.value));
   return (
     <div className={s["elixir-set"]}>
       <div className={s["elixir-set__title"]}>
@@ -25,6 +26,7 @@ const ElixirSet = () => {
           ></ElixirCard>
         ))}
       </div>
+      <Modal>Conten xfczxcd sc gdset</Modal>
     </div>
   );
 };
