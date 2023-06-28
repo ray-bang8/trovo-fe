@@ -2,11 +2,15 @@ import { useState } from "react";
 import Modal from "../Modal";
 import s from "./index.module.scss";
 
-const ElixirCard = ({ title = "", text = "", cost = "", imageSrc = "" }) => {
-  const [isModalOpened, setIsModalOpened] = useState(false);
-  console.log("opened", isModalOpened);
+const ElixirCard = ({
+  title = "",
+  text = "",
+  cost = "",
+  imageSrc = "",
+  onClick = () => {},
+}) => {
   return (
-    <div className={s["elixir-card"]} onClick={() => setIsModalOpened(true)}>
+    <div className={s["elixir-card"]} onClick={onClick}>
       <div className={s["elixir-card__top"]}>
         <img className={s["elixir-card__img"]} src={imageSrc} alt="elixir" />
       </div>
@@ -27,7 +31,6 @@ const ElixirCard = ({ title = "", text = "", cost = "", imageSrc = "" }) => {
           {cost}
         </p>
       </div>
-      <Modal isOpened={isModalOpened}></Modal>
     </div>
   );
 };

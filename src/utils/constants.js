@@ -94,8 +94,42 @@ const elixirCards = [
   },
 ];
 
-const util = {
+const managers = [
+  {
+    name: "Yeldorator",
+    trovo: "https://trovo.live/s/Yeldorator_A",
+    telegram: "https://t.me/yeldorator",
+  },
+  {
+    name: "Idaliya",
+    trovo: "https://trovo.live/s/Idaliya",
+    telegram: "https://t.me/id0507",
+  },
+  {
+    name: "Danelle",
+    trovo: "https://trovo.live/s/ugh_danelle",
+    telegram: "https://t.me/morningdewdeath",
+  },
+  {
+    name: "Aikhanym",
+    trovo: "https://trovo.live/assankhana",
+    telegram: "https://t.me/alieneerie",
+  },
+  {
+    name: "Kura",
+    trovo: "https://trovo.live/s/Kura0511",
+    telegram: "https://t.me/Kura0511",
+  },
+  {
+    name: "Наши Контакты",
+    trovo: "https://trovovip.com/",
+    telegram: "https://t.me/trovoshop_bot",
+  },
+];
+
+const constants = {
   elixirCards,
+  managers,
 };
 
-export default util;
+export default constants;

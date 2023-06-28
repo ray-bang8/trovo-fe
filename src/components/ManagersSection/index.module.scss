@@ -1,0 +1,38 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.managers-section-wrapper {
+  @include flex-column-center();
+
+  width: 100%;
+  padding: 50px 0;
+}
+
+.managers-section {
+  @include flex-column-center();
+
+  width: 90%;
+  row-gap: 70px;
+}
+
+.managers-section__title {
+  font-size: 38px;
+  color: $white;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 35px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}

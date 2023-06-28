@@ -1,10 +1,23 @@
 import { useState } from "react";
 import ElixirCard from "../ElixirCard";
-import Modal from "../Modal";
 import utilConstants from "../../utils/constants";
 import s from "./index.module.scss";
+import { ModalPopup } from "../Modal";
+import { useModalPopup } from "../../hooks/modalPopup";
+import { PaymentForm } from "../PaymentForm";
 
 const ElixirSet = () => {
+  const [isOpen, openPopup, closePopup] = useModalPopup();
+  const [selectedCard, setSelectedCard] = useState({});
+
+  const pickCard = (card) => {
+    return () => {
+      setSelectedCard(card);
+      openPopup();
+      console.log(selectedCard, 111, isOpen);
+    };
+  };
+
   return (
     <div className={s["elixir-set"]}>
       <div className={s["elixir-set__title"]}>
@@ -23,10 +36,14 @@ const ElixirSet = () => {
             cost={card.cost}
             imageSrc={card.src}
             key={card.value}
-          ></ElixirCard>
+            onClick={pickCard(card)}
+          />
         ))}
       </div>
-      <Modal>Conten xfczxcd sc gdset</Modal>
+
+      <ModalPopup isOpen={isOpen} closePopup={closePopup}>
+        <PaymentForm selectedCard={selectedCard} />
+      </ModalPopup>
     </div>
   );
 };

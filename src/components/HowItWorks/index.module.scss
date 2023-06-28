@@ -1,0 +1,52 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.how-it-works-wrapper {
+  @include flex-column-center();
+
+  width: 100%;
+  padding: 50px 0;
+}
+
+.how-it-works {
+  @include flex-column-center();
+
+  width: 75%;
+  row-gap: 70px;
+}
+
+.how-it-works__title {
+  font-size: 38px;
+  color: $white;
+}
+
+.how-it-works__articles {
+  @include flex-column-center();
+
+  align-items: flex-start;
+  row-gap: 50px;
+  color: $white;
+}
+
+.article {
+  @include flex-column-center();
+
+  align-items: flex-start;
+  row-gap: 15px;
+  max-width: 670px;
+  width: 100%;
+  padding-left: 50px;
+  position: relative;
+}
+
+.trovo-link {
+  color: $link-gold;
+}
+
+.article__checkmark {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 55px;
+  height: 55px;
+}

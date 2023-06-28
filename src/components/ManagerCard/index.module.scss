@@ -1,0 +1,35 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.manager-card {
+  @include flex-column-center();
+
+  color: $white;
+  row-gap: 15px;
+  padding: 10px;
+}
+
+.manager-card__title {
+  font-size: 18px;
+  color: $white;
+  font-weight: 700;
+}
+
+.manager-card__separate-line {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-color: #000000;
+  opacity: 0.2;
+  background-color: $link-gold;
+}
+
+.manager-card__contacts {
+  @include flex-column-center();
+
+  row-gap: 5px;
+}
+
+.contact__link {
+  color: $link-gold;
+}
