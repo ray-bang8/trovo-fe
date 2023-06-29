@@ -127,6 +127,18 @@ const managers = [
   },
 ];
 
+export const BROKER_TYPE = {
+  binance: "binance",
+  card: "card",
+  freekassa: "freekassa",
+};
+
+export const CURRENCY_TYPE = {
+  RUB: "RUB",
+  EUR: "EUR",
+  USD: "USD",
+};
+
 const constants = {
   elixirCards,
   managers,

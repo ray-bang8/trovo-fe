@@ -50,6 +50,11 @@
   font-size: 1.2em;
 }
 
+.form-fields__input--error,
+.form-fields__select--error {
+  border: 1px solid red;
+}
+
 .form-fields__select {
   background-color: white;
   color: gray;
