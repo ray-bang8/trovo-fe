@@ -27,7 +27,7 @@
   }
 
   @media (min-width: 1024px) {
-    min-width: 215px;
+    min-width: 225px;
     height: auto;
   }
 }
@@ -38,7 +38,7 @@
   object-fit: contain;
 
   @media (min-width: 1024px) {
-    height: 200px;
+    height: 170px;
   }
 }
 
@@ -59,13 +59,15 @@
   &--cost {
     align-self: flex-end;
     font-weight: bold;
+    margin-top: 10px;
   }
 
   &--bold {
     font-weight: bold;
+    margin-bottom: 10px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

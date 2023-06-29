@@ -2,8 +2,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/header";
 import ElixirSet from "./components/ElixirSet";
 import HowItWorks from "./components/HowItWorks";
-import "./App.css";
 import { ManagersSection } from "./components/ManagersSection";
+import Footer from "./components/footer";
+import "./App.css";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ElixirSet />
       <HowItWorks />
       <ManagersSection />
+      <Footer />
     </div>
   );
 }

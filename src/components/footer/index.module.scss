@@ -1,0 +1,41 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.footer {
+  @include flex-column-center();
+  padding: 20px 0;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 50px 0;
+    padding-bottom: 30px;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding-bottom: 50px;
+  gap: 20px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $white;
+
+  &:hover {
+    color: rgba(93, 241, 79, 0.792);
+  }
+}
+
+.nav__text {
+  color: gray;
+}
