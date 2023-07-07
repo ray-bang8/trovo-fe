@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30c646e9.css",
+    "main.js": "/static/js/main.96ce52b4.js",
+    "static/js/787.ac064c8a.chunk.js": "/static/js/787.ac064c8a.chunk.js",
+    "static/media/100000-250000Elixirs.png": "/static/media/100000-250000Elixirs.84aec80fb6cc38dbeffe.png",
+    "static/media/500000Elixirs.png": "/static/media/500000Elixirs.74651e5fe80653eda667.png",
+    "static/media/25000-50000Elixirs.png": "/static/media/25000-50000Elixirs.d77094a56927c5d6df55.png",
+    "static/media/5000-10000Elixirs.png": "/static/media/5000-10000Elixirs.4c16e40d2e7b22071cd3.png",
+    "static/media/2000Elixirs.png": "/static/media/2000Elixirs.4957c920f6f8e94b3a9f.png",
+    "static/media/1Elixir.png": "/static/media/1Elixir.986f11565a732dc903ec.png",
+    "static/media/100Elixirs.png": "/static/media/100Elixirs.c56d8b3532da5847868e.png",
+    "static/media/500-1000Elixirs.png": "/static/media/500-1000Elixirs.ed32e638da9d1f47d7c1.png",
+    "static/media/visa-mastercard.png": "/static/media/visa-mastercard.850845f3c035aff856be.png",
+    "static/media/trovo-shop.png": "/static/media/trovo-shop.f341dd98231b161a7dce.png",
+    "index.html": "/index.html",
+    "main.30c646e9.css.map": "/static/css/main.30c646e9.css.map",
+    "main.96ce52b4.js.map": "/static/js/main.96ce52b4.js.map",
+    "787.ac064c8a.chunk.js.map": "/static/js/787.ac064c8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30c646e9.css",
+    "static/js/main.96ce52b4.js"
+  ]
+}

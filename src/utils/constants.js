@@ -131,6 +131,14 @@ export const BROKER_TYPE = {
   binance: "binance",
   card: "card",
   freekassa: "freekassa",
+  qiwi: "qiwi",
+};
+
+export const BROKER_LINKS = {
+  binance: "https://backend.aqua-creative.co/monetix/payin/binance?",
+  card: "https://backend.aqua-creative.co/monetix/payin/card?",
+  freekassa: "https://backend.aqua-creative.co/free-kassa/payin?",
+  qiwi: "https://backend.aqua-creative.co/qiwi/qiwi-invoice-v2?",
 };
 
 export const CURRENCY_TYPE = {

@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import PaymentTypes from "../PaymentTypes";
 import s from "./index.module.scss";
-import { CURRENCY_TYPE } from "../../utils/constants";
+import { BROKER_LINKS, CURRENCY_TYPE } from "../../utils/constants";
+import { updatePaymentType } from "../../utils/formatters";
 
 export const PaymentForm = ({ selectedCard, className }) => {
-  const [name, setName] = useState("");
-  const [nameError, setNameError] = useState(false);
+  const [username, setUsername] = useState("");
+  const [usernameError, setUsernameError] = useState(false);
 
   const [currency, setCurrency] = useState("");
   const [currencyError, setCurrencyError] = useState(false);
 
   const [promoCode, setPromoCode] = useState("");
 
-  const validateName = () => {
-    let name_field = name.trim();
+  const validateUsername = () => {
+    let name_field = username.trim();
 
     if (name_field.length <= 0) {
-      setNameError(true);
+      setUsernameError(true);
       return true;
     }
-    setNameError(false);
+    setUsernameError(false);
     return false;
   };
 
@@ -34,21 +35,43 @@ export const PaymentForm = ({ selectedCard, className }) => {
   };
 
   const isFieldsHasErrors = () => {
-    let isNameError = validateName();
+    let isNameError = validateUsername();
     let isCurrencyError = validateCurrency();
 
     return isNameError || isCurrencyError;
   };
 
   const startTransaction = (brokerType = "") => {
-    return () => {
+    return async () => {
       const isInvalidFields = isFieldsHasErrors();
 
       if (isInvalidFields) return;
 
-      console.log(selectedCard);
+      const { value: amount } = selectedCard;
 
-      console.log(brokerType, name, currency, promoCode);
+      const payload = {
+        currency,
+        username,
+        promoCode,
+        "payment-type": updatePaymentType(brokerType, amount),
+        platform: "TROVO",
+      };
+
+      const payloadAsQueryParams = new URLSearchParams({ ...payload });
+
+      const urlLink = `${
+        BROKER_LINKS[brokerType]
+      }${payloadAsQueryParams.toString()}`;
+
+      try {
+        const response = await fetch(urlLink);
+
+        const redirectLink = await response.text();
+
+        window.location = redirectLink;
+      } catch (error) {
+        console.log(error, 123);
+      }
     };
   };
 
@@ -66,12 +89,12 @@ export const PaymentForm = ({ selectedCard, className }) => {
       <main className={s["form-fields"]}>
         <input
           className={`${s["form-fields__input"]} ${
-            nameError && s["form-fields__input--error"]
+            usernameError && s["form-fields__input--error"]
           }`}
           placeholder="Имя пользователя Трово"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          onBlur={validateName}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          onBlur={validateUsername}
           required
         />
 

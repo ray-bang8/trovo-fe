@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "react-scripts build && scp -i ~/Desktop/aws-payments-front.pem build ec2-user@35.158.145.211:~/build"
   },
   "eslintConfig": {
     "extends": [
