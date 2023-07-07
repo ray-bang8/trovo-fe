@@ -1,0 +1,21 @@
+.submit-button {
+  padding-top: 30px;
+}
+
+.submit-button__btn {
+  width: 150px;
+  height: 60px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  color: #fff;
+  transition: 500ms linear;
+
+  &:hover {
+    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale(1.1);
+  }
+}

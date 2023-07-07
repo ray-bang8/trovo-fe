@@ -127,7 +127,7 @@ const managers = [
   },
 ];
 
-export const BROKER_TYPE = {
+export const PAYMENT_TYPE = {
   binance: "binance",
   card: "card",
   freekassa: "freekassa",

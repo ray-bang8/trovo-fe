@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import PaymentTypes from "../PaymentTypes";
-import s from "./index.module.scss";
 import { BROKER_LINKS, CURRENCY_TYPE } from "../../utils/constants";
 import { updatePaymentType } from "../../utils/formatters";
+import { SubmitButton } from "../buttons/SubmitButton";
+import s from "./index.module.scss";
 
 export const PaymentForm = ({ selectedCard, className }) => {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
+
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
+
+  const [paymentType, setPaymentType] = useState("");
+
+  const [isMobileNumberShow, setIsMobileNumberShow] = useState(false);
 
   const [currency, setCurrency] = useState("");
   const [currencyError, setCurrencyError] = useState(false);
@@ -24,6 +32,17 @@ export const PaymentForm = ({ selectedCard, className }) => {
     return false;
   };
 
+  const validatePhoneNumber = () => {
+    let name_field = phoneNumber.trim();
+
+    if (name_field.length <= 0) {
+      setPhoneNumberError(true);
+      return true;
+    }
+    setPhoneNumberError(false);
+    return false;
+  };
+
   const validateCurrency = () => {
     if (currency === "") {
       setCurrencyError(true);
@@ -37,12 +56,16 @@ export const PaymentForm = ({ selectedCard, className }) => {
   const isFieldsHasErrors = () => {
     let isNameError = validateUsername();
     let isCurrencyError = validateCurrency();
+    let phoneNumberError =
+      paymentType === "qiwi" ? validatePhoneNumber() : false;
 
-    return isNameError || isCurrencyError;
+    return isNameError || isCurrencyError || phoneNumberError;
   };
 
-  const startTransaction = (brokerType = "") => {
-    return async () => {
+  const startTransaction = (paymentType = "") => {
+    return async (e) => {
+      e.preventDefault();
+
       const isInvalidFields = isFieldsHasErrors();
 
       if (isInvalidFields) return;
@@ -53,14 +76,15 @@ export const PaymentForm = ({ selectedCard, className }) => {
         currency,
         username,
         promoCode,
-        "payment-type": updatePaymentType(brokerType, amount),
+        "payment-type": updatePaymentType(paymentType, amount),
         platform: "TROVO",
+        phoneNumber,
       };
 
       const payloadAsQueryParams = new URLSearchParams({ ...payload });
 
       const urlLink = `${
-        BROKER_LINKS[brokerType]
+        BROKER_LINKS[paymentType]
       }${payloadAsQueryParams.toString()}`;
 
       try {
@@ -114,16 +138,31 @@ export const PaymentForm = ({ selectedCard, className }) => {
           <option value={CURRENCY_TYPE.USD}>USD</option>
           <option value={CURRENCY_TYPE.EUR}>EUR</option>
         </select>
-
         <input
           className={s["form-fields__input"]}
           placeholder="Промокод"
           value={promoCode}
           onChange={(e) => setPromoCode(e.target.value)}
-          required
         />
+        <PaymentTypes
+          setPaymentType={setPaymentType}
+          paymentType={paymentType}
+          setIsMobileNumberShow={setIsMobileNumberShow}
+        ></PaymentTypes>
+        {isMobileNumberShow && (
+          <input
+            className={`${s["form-fields__input"]} ${
+              phoneNumberError && s["form-fields__input--error"]
+            }`}
+            placeholder="Номер телефона"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            onBlur={validatePhoneNumber}
+            required
+          />
+        )}
       </main>
-      <PaymentTypes startTransaction={startTransaction}></PaymentTypes>
+      <SubmitButton handleSubmit={startTransaction(paymentType)} />
     </form>
   );
 };

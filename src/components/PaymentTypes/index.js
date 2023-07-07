@@ -1,53 +1,57 @@
-import { BROKER_TYPE } from "../../utils/constants";
-import cardsLogo from "../../assets/logo/visa-mastercard.png";
-import freeKassaLogo from "../../assets/logo/freekassa.jpg";
-import binanceLogo from "../../assets/logo/binance.jpg";
-import qiwiLogo from "../../assets/logo/qiwi.jpg";
+import { useState } from "react";
+import { PAYMENT_TYPE } from "../../utils/constants";
 import s from "./index.module.scss";
 
-const PaymentTypes = ({ startTransaction = () => {} }) => {
+const PaymentTypes = ({
+  setPaymentType = "",
+  setIsMobileNumberShow = false,
+  paymentType = "",
+}) => {
+  const [currency, setCurrency] = useState("");
+  const [currencyError, setCurrencyError] = useState(false);
+
+  const validateCurrency = () => {
+    if (currency === "") {
+      setCurrencyError(true);
+      return true;
+    }
+
+    setCurrencyError(false);
+    return false;
+  };
+
+  const setPayment = (e) => {
+    setPaymentType(e.target.value);
+    if (e.target.value === "qiwi") {
+      setIsMobileNumberShow(true);
+    } else {
+      setIsMobileNumberShow(false);
+    }
+  };
+
   return (
     <div className={s["payment-types"]}>
-      <div
-        className={s["payment-types__type"]}
-        onClick={startTransaction(BROKER_TYPE.card)}
+      <select
+        className={`${s["form-fields__select"]} ${
+          currencyError && s["form-fields__select--error"]
+        }`}
+        value={paymentType}
+        onChange={(e) => setPayment(e)}
+        // onBlur={validateCurrency}
+        required
       >
-        <img
-          className={s["payment-types__logo"]}
-          src={qiwiLogo}
-          alt="cards-logo"
-        />
-      </div>
-      <div
-        className={s["payment-types__type"]}
-        onClick={startTransaction(BROKER_TYPE.card)}
-      >
-        <img
-          className={s["payment-types__logo"]}
-          src={cardsLogo}
-          alt="cards-logo"
-        />
-      </div>
-      <div
-        className={s["payment-types__type"]}
-        onClick={startTransaction(BROKER_TYPE.freekassa)}
-      >
-        <img
-          className={s["payment-types__logo"]}
-          src={freeKassaLogo}
-          alt="freekassa-logo"
-        />
-      </div>
-      <div
-        className={s["payment-types__type"]}
-        onClick={startTransaction(BROKER_TYPE.binance)}
-      >
-        <img
-          className={s["payment-types__logo"]}
-          src={binanceLogo}
-          alt="binance-logo"
-        />
-      </div>
+        <option selected value={""} disabled>
+          Способ оплаты
+        </option>
+        <option value={PAYMENT_TYPE.card}>Банковская карта</option>
+        <option value={PAYMENT_TYPE.qiwi}>Платежная система QIWI</option>
+        <option value={PAYMENT_TYPE.binance}>
+          Платежная система BINANCE PAY
+        </option>
+        <option value={PAYMENT_TYPE.freekassa}>
+          Платежная система FREEKASSA
+        </option>
+      </select>
     </div>
   );
 };
