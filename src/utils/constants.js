@@ -6,6 +6,10 @@ import fiveThousandElixirs from "../assets/elixirs/5000-10000Elixirs.png";
 import twentyFiveThousandElixirs from "../assets/elixirs/25000-50000Elixirs.png";
 import oneHundredThousandElixirs from "../assets/elixirs/100000-250000Elixirs.png";
 import fiveHundredThousandElixirs from "../assets/elixirs/500000Elixirs.png";
+import qiwiImage from "../assets/logo/qiwi.jpg";
+import cardImage from "../assets/logo/visa-mastercard.png";
+import binanceImage from "../assets/logo/binance.jpg";
+import freekassaImage from "../assets/logo/freekassa.jpg";
 
 const elixirCards = [
   {
@@ -140,6 +144,29 @@ export const BROKER_LINKS = {
   freekassa: "https://backend.aqua-creative.co/free-kassa/payin?",
   qiwi: "https://backend.aqua-creative.co/qiwi/qiwi-invoice-v2?",
 };
+
+export const PAYMENTS_LIST = [
+  {
+    name: PAYMENT_TYPE.binance,
+    redirect_link: BROKER_LINKS.binance,
+    image: binanceImage,
+  },
+  {
+    name: PAYMENT_TYPE.card,
+    redirect_link: BROKER_LINKS.card,
+    image: cardImage,
+  },
+  // {
+  //   name: PAYMENT_TYPE.freekassa,
+  //   redirect_link: BROKER_LINKS.freekassa,
+  //   image: freekassaImage,
+  // },
+  {
+    name: PAYMENT_TYPE.qiwi,
+    redirect_link: BROKER_LINKS.qiwi,
+    image: qiwiImage,
+  },
+];
 
 export const CURRENCY_TYPE = {
   RUB: "RUB",

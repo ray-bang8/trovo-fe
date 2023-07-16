@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact render={() => <Navigate to="/trovo-shop" />} />
+          <Route path="/" exact element={<Navigate to="/trovo-shop" />} />
           <Route path="/trovo-shop" element={<TrovoShop />} />
           <Route path="/trovo-live" element={<TrovoLive />} />
         </Routes>
