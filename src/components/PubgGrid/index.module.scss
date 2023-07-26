@@ -1,0 +1,37 @@
+.pubg-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.pubg-grid__text {
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+}
+
+.pubg-grid__cards {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  gap: 15px;
+
+  @media (min-width: 576px) {
+    gap: 30px;
+  }
+
+  @media (min-width: 744px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}

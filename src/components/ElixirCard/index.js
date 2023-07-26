@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Modal from "../Modal";
 import s from "./index.module.scss";
 
 const ElixirCard = ({

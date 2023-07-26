@@ -1,4 +1,3 @@
-import elixirLogo from "assets/elixirs/500-1000Elixirs.png";
 import {
   BROKER_LINKS,
   PAYMENTS_LIST,
@@ -8,7 +7,6 @@ import {
 import s from "./index.module.scss";
 import { useState } from "react";
 import { SubmitButton } from "../../components/buttons/SubmitButton";
-import { updatePaymentType } from "../../utils/formatters";
 import { Loader } from "../../components/Loader";
 
 export const TrovoLive = ({ payments = [] }) => {
@@ -50,13 +48,9 @@ export const TrovoLive = ({ payments = [] }) => {
     setLoading(true);
 
     try {
-      //mock timer
       await new Promise((res) => {
         return setTimeout(() => res(), 2000);
       });
-      // const response = await fetch(urlLink);
-      // const redirectLink = await response.text();
-      // window.location = redirectLink;
     } catch (error) {
       console.log(error, 123);
     } finally {

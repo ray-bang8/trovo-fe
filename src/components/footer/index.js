@@ -1,6 +1,6 @@
 import s from "./index.module.scss";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className={s["footer"]}>
       <nav className={s["nav"]}>
@@ -33,5 +33,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

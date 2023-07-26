@@ -1,13 +1,15 @@
-import Header from "components/header";
-import ElixirSet from "components/ElixirSet";
+import TrovoHeader from "components/headers/TrovoHeader";
+import ElixirGrid from "components/ElixirGrid";
 import { ManagersSection } from "components/ManagersSection";
-import Footer from "components/footer";
+import HowTrovoWorks from "components/HowTrovoWorks";
+import { Footer } from "components/footer";
 
 export const TrovoShop = () => {
   return (
     <>
-      <Header />
-      <ElixirSet />
+      <TrovoHeader />
+      <ElixirGrid />
+      <HowTrovoWorks />
       <ManagersSection />
       <Footer />
     </>

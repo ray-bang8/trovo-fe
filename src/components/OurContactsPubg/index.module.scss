@@ -1,0 +1,18 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.our-contacts-pubg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-contacts-pubg__title {
+  font-size: 38px;
+  color: $white;
+}
+
+.cards-wrapper {
+  padding-top: 40px;
+}

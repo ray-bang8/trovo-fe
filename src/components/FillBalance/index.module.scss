@@ -1,0 +1,59 @@
+.fill-balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fill-balance__title {
+  color: #fff;
+  font-size: 42px;
+}
+
+.fill-balance__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.fill-balance__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 40vw;
+  border-radius: 20px;
+  background-color: #1f1f1f;
+  padding: 20px;
+  cursor: pointer;
+  transition: 500ms linear;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale(1.05);
+  }
+
+  &--trovo {
+    background: -webkit-linear-gradient(left, #000002, #260166);
+    background: -moz-linear-gradient(left, #000002, #260166);
+    background: -ms-linear-gradient(left, #000002, #260166);
+    background: -o-linear-gradient(left, #000002, #260166);
+    background: linear-gradient(to right, #000002, #260166);
+  }
+}
+
+.fill-balance__logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transform: scale(1.5);
+}
+
+.fill-balance__text {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 900;
+}

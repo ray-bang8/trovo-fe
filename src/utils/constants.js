@@ -6,6 +6,10 @@ import fiveThousandElixirs from "../assets/elixirs/5000-10000Elixirs.png";
 import twentyFiveThousandElixirs from "../assets/elixirs/25000-50000Elixirs.png";
 import oneHundredThousandElixirs from "../assets/elixirs/100000-250000Elixirs.png";
 import fiveHundredThousandElixirs from "../assets/elixirs/500000Elixirs.png";
+import sixtyUC from "assets/pubg-ucs/1pubg.png";
+import threeHundredUC from "assets/pubg-ucs/300pubg.png";
+import sixThousandUC from "assets/pubg-ucs/6000pubg.png";
+import thirtyThousandUC from "assets/pubg-ucs/32000pubg.png";
 import qiwiImage from "../assets/logo/qiwi.jpg";
 import cardImage from "../assets/logo/visa-mastercard.png";
 import binanceImage from "../assets/logo/binance.jpg";
@@ -98,6 +102,65 @@ const elixirCards = [
   },
 ];
 
+const pubgCards = [
+  {
+    value: 1,
+    title: "60 UC",
+    text: "60 Unknown Cash",
+    cost: "83.90 ₽",
+    src: sixtyUC,
+  },
+  {
+    value: 300,
+    title: "300 UC + 25 FREE",
+    text: "325 Unknown Cash",
+    cost: "399.90 ₽",
+    src: sixtyUC,
+  },
+  {
+    value: 600,
+    title: "600 UC + 60 FREE",
+    text: "660 Unknown Cash",
+    cost: "799.90 ₽",
+    src: threeHundredUC,
+  },
+  {
+    value: 1500,
+    title: "1500 UC + 300 FREE",
+    text: "1800 Unknown Cash",
+    cost: "1,999.00 ₽",
+    src: threeHundredUC,
+  },
+  {
+    value: 6000,
+    title: "6000 UC + 2100 FREE",
+    text: "8100 Unknown Cash",
+    cost: "8,149.90 ₽",
+    src: sixThousandUC,
+  },
+  {
+    value: 12000,
+    title: "16200 UC + 4200 FREE",
+    text: "16200 Unknown Cash",
+    cost: "16,139.90 ₽",
+    src: thirtyThousandUC,
+  },
+  {
+    value: 18000,
+    title: "18000 UC + 6300 FREE",
+    text: "24300 Unknown Cash",
+    cost: "24,545.90 ₽",
+    src: thirtyThousandUC,
+  },
+  {
+    value: 24000,
+    title: "24000 UC + 8400 FREE",
+    text: "32400 Unknown Cash",
+    cost: "32,745.90 ₽",
+    src: thirtyThousandUC,
+  },
+];
+
 const managers = [
   {
     name: "Yeldorator",
@@ -176,6 +239,7 @@ export const CURRENCY_TYPE = {
 
 const constants = {
   elixirCards,
+  pubgCards,
   managers,
 };
 
