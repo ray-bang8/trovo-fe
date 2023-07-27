@@ -1,13 +1,11 @@
+import { useState } from "react";
 import {
   BROKER_LINKS,
   PAYMENTS_LIST,
   PAYMENT_TYPE,
 } from "../../utils/constants";
-
-import { useState } from "react";
 import { SubmitButton } from "../../components/buttons/SubmitButton";
 import { Loader } from "../../components/Loader";
-
 import s from "./index.module.scss";
 
 export const TrovoLive = ({ payments = [] }) => {
@@ -18,8 +16,6 @@ export const TrovoLive = ({ payments = [] }) => {
 
   const queryParameters = new URLSearchParams(window.location.search);
   const id = queryParameters.get("id");
-
-  console.log(id);
 
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
@@ -57,6 +53,10 @@ export const TrovoLive = ({ payments = [] }) => {
     setLoading(true);
 
     try {
+      //mock timer
+      // await new Promise((res) => {
+      //   return setTimeout(() => res(), 2000);
+      // });
       const response = await fetch(urlLink);
       const redirectLink = await response.text();
       window.location = redirectLink;
