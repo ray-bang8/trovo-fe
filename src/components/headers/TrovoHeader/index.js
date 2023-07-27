@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import trovoShopLogo from "assets/images/trovo-shop.png";
 import s from "./index.module.scss";
-import { Link } from "react-router-dom";
 
-const TrovoHeader = () => {
+export const TrovoHeader = () => {
   return (
     <header className={s["header"]}>
       <div className={s["header__left-side"]}>
@@ -27,5 +27,3 @@ const TrovoHeader = () => {
     </header>
   );
 };
-
-export default TrovoHeader;

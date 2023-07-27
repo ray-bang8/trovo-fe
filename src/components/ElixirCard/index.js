@@ -1,6 +1,6 @@
 import s from "./index.module.scss";
 
-const ElixirCard = ({
+export const ElixirCard = ({
   title = "",
   text = "",
   cost = "",
@@ -32,5 +32,3 @@ const ElixirCard = ({
     </div>
   );
 };
-
-export default ElixirCard;

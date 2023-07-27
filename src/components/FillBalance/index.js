@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import UCCode from "assets/pubg-ucs/1pubg.png";
 import TrovoCode from "assets/elixirs/25000-50000Elixirs.png";
 import s from "./index.module.scss";
-import { Link } from "react-router-dom";
 
 export const FillBalance = () => {
   return (

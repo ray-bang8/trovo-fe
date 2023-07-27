@@ -1,7 +1,7 @@
 import { CheckMarkTrovoSVG } from "../../assets/svg/CheckMarkTrovoSVG";
 import s from "./index.module.scss";
 
-const HowTrovoWorks = () => {
+export const HowTrovoWorks = () => {
   return (
     <div className={s["how-it-works-wrapper"]}>
       <section className={s["how-it-works"]}>
@@ -66,4 +66,3 @@ const HowTrovoWorks = () => {
     </div>
   );
 };
-export default HowTrovoWorks;

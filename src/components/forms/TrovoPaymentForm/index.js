@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PaymentTypes from "../../PaymentTypes";
+import { PaymentTypes } from "../../PaymentTypes";
 import { BROKER_LINKS, CURRENCY_TYPE } from "../../../utils/constants";
 import { updatePaymentType } from "../../../utils/formatters";
 import { SubmitButton } from "../../buttons/SubmitButton";

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PAYMENT_TYPE } from "../../utils/constants";
 import s from "./index.module.scss";
 
-const PaymentTypes = ({
+export const PaymentTypes = ({
   setPaymentType = "",
   setIsMobileNumberShow = false,
   paymentType = "",
@@ -37,7 +37,6 @@ const PaymentTypes = ({
         }`}
         value={paymentType}
         onChange={(e) => setPayment(e)}
-        // onBlur={validateCurrency}
         required
       >
         <option selected value={""} disabled>
@@ -55,5 +54,3 @@ const PaymentTypes = ({
     </div>
   );
 };
-
-export default PaymentTypes;

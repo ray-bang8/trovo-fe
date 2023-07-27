@@ -1,12 +1,12 @@
 import { useState } from "react";
-import ElixirCard from "../ElixirCard";
-import utilConstants from "../../utils/constants";
+import { ElixirCard } from "../ElixirCard";
 import { TrovoModalPopup } from "../modals/TrovoModalPopup";
 import { useModalPopup } from "../../hooks/modalPopup";
 import { TrovoPaymentForm } from "../forms/TrovoPaymentForm";
+import utilConstants from "../../utils/constants";
 import s from "./index.module.scss";
 
-const ElixirGrid = () => {
+export const ElixirGrid = () => {
   const [isOpen, openPopup, closePopup] = useModalPopup();
   const [selectedCard, setSelectedCard] = useState({});
 
@@ -45,5 +45,3 @@ const ElixirGrid = () => {
     </div>
   );
 };
-
-export default ElixirGrid;

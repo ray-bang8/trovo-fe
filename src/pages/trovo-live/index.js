@@ -1,11 +1,7 @@
 import { useState } from "react";
-import {
-  BROKER_LINKS,
-  PAYMENTS_LIST,
-  PAYMENT_TYPE,
-} from "../../utils/constants";
-import { SubmitButton } from "../../components/buttons/SubmitButton";
-import { Loader } from "../../components/Loader";
+import { BROKER_LINKS, PAYMENTS_LIST, PAYMENT_TYPE } from "utils/constants";
+import { SubmitButton } from "components/buttons/SubmitButton";
+import { Loader } from "components/Loader";
 import s from "./index.module.scss";
 
 export const TrovoLive = ({ payments = [] }) => {
