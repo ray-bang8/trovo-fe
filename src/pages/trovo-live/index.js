@@ -4,16 +4,22 @@ import {
   PAYMENT_TYPE,
 } from "../../utils/constants";
 
-import s from "./index.module.scss";
 import { useState } from "react";
 import { SubmitButton } from "../../components/buttons/SubmitButton";
 import { Loader } from "../../components/Loader";
+
+import s from "./index.module.scss";
 
 export const TrovoLive = ({ payments = [] }) => {
   const [selectedPayment, setSelectedPayment] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const queryParameters = new URLSearchParams(window.location.search);
+  const id = queryParameters.get("id");
+
+  console.log(id);
 
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
@@ -37,12 +43,15 @@ export const TrovoLive = ({ payments = [] }) => {
       if (isInvalidFields) return;
     }
 
-    const payload = {};
+    const payload = {
+      paymentId: id,
+      paymentMethod: selectedPayment,
+    };
 
     const payloadAsQueryParams = new URLSearchParams({ ...payload });
 
     const urlLink = `${
-      BROKER_LINKS[selectedPayment]
+      BROKER_LINKS["trovolive"]
     }${payloadAsQueryParams.toString()}`;
 
     setLoading(true);
@@ -78,7 +87,11 @@ export const TrovoLive = ({ payments = [] }) => {
                     }`}
                     onClick={() => setSelectedPayment(broker.name)}
                   >
-                    <img src={broker.image} className={s["broker__image"]} />
+                    <img
+                      src={broker.image}
+                      className={s["broker__image"]}
+                      alt="broker"
+                    />
                   </li>
                 );
               })}
