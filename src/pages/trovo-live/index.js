@@ -17,6 +17,9 @@ export const TrovoLive = ({ payments = [] }) => {
   const [phoneNumberError, setPhoneNumberError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const queryParameters = new URLSearchParams(window.location.search)
+  const id = queryParameters.get("id")
+
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
 
@@ -39,24 +42,27 @@ export const TrovoLive = ({ payments = [] }) => {
       if (isInvalidFields) return;
     }
 
-    const payload = {};
+    const payload = {
+      "paymentId": id,
+      "paymentMethod": selectedPayment
+    };
 
     const payloadAsQueryParams = new URLSearchParams({ ...payload });
 
     const urlLink = `${
-      BROKER_LINKS[selectedPayment]
+      BROKER_LINKS['trovolive']
     }${payloadAsQueryParams.toString()}`;
 
     setLoading(true);
 
     try {
       //mock timer
-      await new Promise((res) => {
-        return setTimeout(() => res(), 2000);
-      });
-      // const response = await fetch(urlLink);
-      // const redirectLink = await response.text();
-      // window.location = redirectLink;
+      // await new Promise((res) => {
+      //   return setTimeout(() => res(), 2000);
+      // });
+      const response = await fetch(urlLink);
+      const redirectLink = await response.text();
+      window.location = redirectLink;
     } catch (error) {
       console.log(error, 123);
     } finally {

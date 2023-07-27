@@ -143,6 +143,8 @@ export const BROKER_LINKS = {
   card: "https://backend.aqua-creative.co/monetix/payin/card?",
   freekassa: "https://backend.aqua-creative.co/free-kassa/payin?",
   qiwi: "https://backend.aqua-creative.co/qiwi/qiwi-invoice-v2?",
+  // trovolive: "https://backend-test.aqua-creative.co/trovo/elixir-payment?",
+  trovolive: "http://localhost:80/trovo/elixir-payment?",
 };
 
 export const PAYMENTS_LIST = [
