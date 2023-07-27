@@ -1,10 +1,16 @@
 .header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 25px;
-  padding-left: 60px;
-  padding-right: 60px;
+
+  @media (min-width: 744px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 .header__left-side {
@@ -12,17 +18,60 @@
   gap: 10px;
 }
 
+.header__right-side {
+  display: flex;
+  align-items: center;
+}
+
+.header__hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .header__trovo-shop-logo {
   max-width: 82px;
   height: auto;
   cursor: pointer;
+  padding-bottom: 20px;
+
+  @media (min-width: 744px) {
+    padding: 0;
+    max-width: 82px;
+    height: auto;
+  }
 }
 
 .navbar__list {
+  margin: 0;
+  padding: 0;
   display: flex;
   gap: 20px;
   list-style: none;
   text-decoration: none;
+}
+
+.navbar.active .navbar__list {
+  flex-direction: column;
 }
 
 .list__item {

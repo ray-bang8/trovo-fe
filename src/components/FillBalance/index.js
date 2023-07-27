@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const FillBalance = () => {
   return (
     <div className={s["fill-balance"]}>
-      <h2 className={s["fill-balance__title"]}>Пополнение Баланса</h2>
+      <h2 className={s["fill-balance__text"]}>Пополнение Баланса</h2>
       <div className={s["fill-balance__wrapper"]}>
         <Link className={s["fill-balance__type"]} to="/pubg-shop">
           <img className={s["fill-balance__logo"]} src={UCCode} alt="UC Code" />

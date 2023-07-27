@@ -3,6 +3,9 @@ import { PubgCard } from "components/PubgCard";
 import { useModalPopup } from "hooks/modalPopup";
 import utilConstants from "utils/constants";
 import s from "./index.module.scss";
+import { TrovoModalPopup } from "components/modals/TrovoModalPopup";
+import { PubgModalPopup } from "components/modals/PubgModal";
+import { PubgPaymentForm } from "components/forms/PubgPaymentForm";
 
 export const PubgGrid = () => {
   const [isOpen, openPopup, closePopup] = useModalPopup();
@@ -34,6 +37,9 @@ export const PubgGrid = () => {
           />
         ))}
       </div>
+      <PubgModalPopup isOpen={isOpen} closePopup={closePopup}>
+        <PubgPaymentForm selectedCard={selectedCard} />
+      </PubgModalPopup>
     </div>
   );
 };

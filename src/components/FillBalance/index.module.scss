@@ -3,18 +3,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.fill-balance__title {
-  color: #fff;
-  font-size: 42px;
+  padding-bottom: 50px;
 }
 
 .fill-balance__wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 20px;
+  padding: 20px;
+  width: 100%;
+
+  @media (min-width: 744px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 40%;
+  }
 }
 
 .fill-balance__type {
@@ -22,7 +31,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 40vw;
+  width: 100%;
   border-radius: 20px;
   background-color: #1f1f1f;
   padding: 20px;
@@ -54,6 +63,9 @@
 
 .fill-balance__text {
   color: #fff;
-  font-size: 42px;
-  font-weight: 900;
+  font-size: 26px;
+
+  @media (min-width: 744px) {
+    font-size: 42px;
+  }
 }

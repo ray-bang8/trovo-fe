@@ -206,6 +206,7 @@ export const BROKER_LINKS = {
   card: "https://backend.aqua-creative.co/monetix/payin/card?",
   freekassa: "https://backend.aqua-creative.co/free-kassa/payin?",
   qiwi: "https://backend.aqua-creative.co/qiwi/qiwi-invoice-v2?",
+  pubgm: "https://backend.aqua-creative.co/monetix/payin?",
 };
 
 export const PAYMENTS_LIST = [

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ElixirCard from "../ElixirCard";
 import utilConstants from "../../utils/constants";
-import { ModalPopup } from "../Modal";
+import { TrovoModalPopup } from "../modals/TrovoModalPopup";
 import { useModalPopup } from "../../hooks/modalPopup";
-import { PaymentForm } from "../PaymentForm";
+import { TrovoPaymentForm } from "../forms/TrovoPaymentForm";
 import s from "./index.module.scss";
 
 const ElixirGrid = () => {
@@ -39,10 +39,9 @@ const ElixirGrid = () => {
           />
         ))}
       </div>
-
-      <ModalPopup isOpen={isOpen} closePopup={closePopup}>
-        <PaymentForm selectedCard={selectedCard} />
-      </ModalPopup>
+      <TrovoModalPopup isOpen={isOpen} closePopup={closePopup}>
+        <TrovoPaymentForm selectedCard={selectedCard} />
+      </TrovoModalPopup>
     </div>
   );
 };

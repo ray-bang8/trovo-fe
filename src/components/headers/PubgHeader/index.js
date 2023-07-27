@@ -1,23 +1,28 @@
+import { Link } from "react-router-dom";
 import trovoShopLogo from "assets/images/trovo-shop.png";
 import pubgShopLogo from "assets/images/pubg-shop.png";
 import s from "./index.module.scss";
-import { Link } from "react-router-dom";
 
 export const PubgHeader = () => {
   return (
     <header className={s["header"]}>
       <div className={s["header__left-side"]}>
-        <img
-          className={s["header__trovo-shop-logo"]}
-          alt="trovo-logo"
-          src={trovoShopLogo}
-        />
+        <Link to="/other-games">
+          <img
+            className={s["header__trovo-shop-logo"]}
+            alt="trovo-logo"
+            src={trovoShopLogo}
+          />
+        </Link>
+
         <div className={s["header__separator"]}></div>
-        <img
-          className={s["header__trovo-shop-logo"]}
-          alt="trovo-logo"
-          src={pubgShopLogo}
-        />
+        <Link to="/pubg-shop">
+          <img
+            className={s["header__trovo-shop-logo"]}
+            alt="trovo-logo"
+            src={pubgShopLogo}
+          />
+        </Link>
       </div>
       <div className={s["header__right-side"]}>
         <nav className={s["navbar"]}>

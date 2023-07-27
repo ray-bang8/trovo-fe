@@ -1,7 +1,6 @@
-import { createPortal } from "react-dom";
 import s from "./index.module.scss";
 
-export const ModalPopup = ({
+export const TrovoModalPopup = ({
   isOpen = false,
   closePopup = () => {},
   children,

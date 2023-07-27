@@ -48,9 +48,9 @@ export const TrovoLive = ({ payments = [] }) => {
     setLoading(true);
 
     try {
-      await new Promise((res) => {
-        return setTimeout(() => res(), 2000);
-      });
+      const response = await fetch(urlLink);
+      const redirectLink = await response.text();
+      window.location = redirectLink;
     } catch (error) {
       console.log(error, 123);
     } finally {

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import PaymentTypes from "../PaymentTypes";
-import { BROKER_LINKS, CURRENCY_TYPE } from "../../utils/constants";
-import { updatePaymentType } from "../../utils/formatters";
-import { SubmitButton } from "../buttons/SubmitButton";
+import { useState } from "react";
+import PaymentTypes from "../../PaymentTypes";
+import { BROKER_LINKS, CURRENCY_TYPE } from "../../../utils/constants";
+import { updatePaymentType } from "../../../utils/formatters";
+import { SubmitButton } from "../../buttons/SubmitButton";
 import s from "./index.module.scss";
 
-export const PaymentForm = ({ selectedCard, className }) => {
+export const TrovoPaymentForm = ({ selectedCard, className }) => {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
 
