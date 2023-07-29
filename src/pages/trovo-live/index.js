@@ -38,6 +38,7 @@ export const TrovoLive = ({ payments = [] }) => {
     const payload = {
       paymentId: id,
       paymentMethod: selectedPayment,
+      phoneNumber,
     };
 
     const payloadAsQueryParams = new URLSearchParams({ ...payload });
@@ -49,10 +50,6 @@ export const TrovoLive = ({ payments = [] }) => {
     setLoading(true);
 
     try {
-      //mock timer
-      // await new Promise((res) => {
-      //   return setTimeout(() => res(), 2000);
-      // });
       const response = await fetch(urlLink);
       const redirectLink = await response.text();
       window.location = redirectLink;

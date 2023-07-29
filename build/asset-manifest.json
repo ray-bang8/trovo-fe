@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cbb94748.css",
+    "main.js": "/static/js/main.48902351.js",
+    "static/js/787.ac064c8a.chunk.js": "/static/js/787.ac064c8a.chunk.js",
+    "static/media/100000-250000Elixirs.png": "/static/media/100000-250000Elixirs.84aec80fb6cc38dbeffe.png",
+    "static/media/500000Elixirs.png": "/static/media/500000Elixirs.74651e5fe80653eda667.png",
+    "static/media/25000-50000Elixirs.png": "/static/media/25000-50000Elixirs.d77094a56927c5d6df55.png",
+    "static/media/5000-10000Elixirs.png": "/static/media/5000-10000Elixirs.4c16e40d2e7b22071cd3.png",
+    "static/media/2000Elixirs.png": "/static/media/2000Elixirs.4957c920f6f8e94b3a9f.png",
+    "static/media/1Elixir.png": "/static/media/1Elixir.986f11565a732dc903ec.png",
+    "static/media/100Elixirs.png": "/static/media/100Elixirs.c56d8b3532da5847868e.png",
+    "static/media/500-1000Elixirs.png": "/static/media/500-1000Elixirs.ed32e638da9d1f47d7c1.png",
+    "static/media/pubg-shop.png": "/static/media/pubg-shop.d3b3995066d84ead49be.png",
+    "static/media/32000pubg.png": "/static/media/32000pubg.dd0bdad14e5af212bd5e.png",
+    "static/media/visa-mastercard.png": "/static/media/visa-mastercard.850845f3c035aff856be.png",
+    "static/media/6000pubg.png": "/static/media/6000pubg.1fee603665c6152639a5.png",
+    "static/media/300pubg.png": "/static/media/300pubg.11336a0a3012b87427eb.png",
+    "static/media/trovo-shop.png": "/static/media/trovo-shop.f341dd98231b161a7dce.png",
+    "static/media/1pubg.png": "/static/media/1pubg.55fb1c1d67e9398527f3.png",
+    "static/media/qiwi.jpg": "/static/media/qiwi.60b0b64dfcaca101738e.jpg",
+    "index.html": "/index.html",
+    "main.cbb94748.css.map": "/static/css/main.cbb94748.css.map",
+    "main.48902351.js.map": "/static/js/main.48902351.js.map",
+    "787.ac064c8a.chunk.js.map": "/static/js/787.ac064c8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbb94748.css",
+    "static/js/main.48902351.js"
+  ]
+}
