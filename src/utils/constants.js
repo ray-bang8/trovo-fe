@@ -209,11 +209,11 @@ export const PAYMENT_TYPE_BINANCE = {
 };
 
 export const BROKER_LINKS = {
-  binance: "https://backend.aqua-creative.co/monetix/payin/binance?",
-  card: "https://backend.aqua-creative.co/monetix/payin/card?",
-  freekassa: "https://backend.aqua-creative.co/free-kassa/payin?",
-  qiwi: "https://backend.aqua-creative.co/qiwi/qiwi-invoice-v2?",
-  pubgm: "https://backend.aqua-creative.co/monetix/payin?",
+  binance: "/monetix/payin/binance?",
+  card: "/monetix/payin/card?",
+  freekassa: "/free-kassa/payin?",
+  qiwi: "/qiwi/qiwi-invoice-v2?",
+  pubgm: "/monetix/payin?",
   trovolive: "http://localhost:80/trovo/elixir-payment?",
 };
 

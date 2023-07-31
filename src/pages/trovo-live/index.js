@@ -3,9 +3,11 @@ import {
   BROKER_LINKS,
   PAYMENTS_LIST,
   PAYMENT_TYPE_BINANCE,
+  PAYMENT_TYPE,
 } from "utils/constants";
 import { SubmitButton } from "components/buttons/SubmitButton";
 import { Loader } from "components/Loader";
+import apiService from "services/api";
 import s from "./index.module.scss";
 
 export const TrovoLive = ({ payments = [] }) => {
@@ -28,33 +30,30 @@ export const TrovoLive = ({ payments = [] }) => {
     return false;
   };
 
-  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE_BINANCE.qiwi;
+  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE.qiwi;
+
+  console.log(isMobileNumberShow, selectedPayment);
 
   const startTransaction = async (e) => {
     e.preventDefault();
 
-    if (selectedPayment === PAYMENT_TYPE_BINANCE.qiwi) {
+    if (selectedPayment === PAYMENT_TYPE.qiwi) {
       const isInvalidFields = validatePhoneNumber();
 
       if (isInvalidFields) return;
     }
 
-    const payload = {
+    const params = {
       paymentId: id,
       paymentMethod: selectedPayment,
       phoneNumber,
     };
 
-    const payloadAsQueryParams = new URLSearchParams({ ...payload });
-
-    const urlLink = `${
-      BROKER_LINKS["trovolive"]
-    }${payloadAsQueryParams.toString()}`;
-
     setLoading(true);
 
     try {
-      const response = await fetch(urlLink);
+      const response = await apiService.get(BROKER_LINKS["trovolive"], params);
+
       const redirectLink = await response.text();
       window.location = redirectLink;
     } catch (error) {

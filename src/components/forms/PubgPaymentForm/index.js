@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BROKER_LINKS } from "../../../utils/constants";
 import { SubmitButton } from "../../buttons/SubmitButton";
+import apiService from "services/api";
 import s from "./index.module.scss";
 
 export const PubgPaymentForm = ({ selectedCard, className }) => {
@@ -34,21 +35,17 @@ export const PubgPaymentForm = ({ selectedCard, className }) => {
 
       if (isInvalidFields) return;
 
-      const payload = {
+      const params = {
         email,
         platform: "PUBGM",
       };
 
       if (promoCode) {
-        payload.promoCode = promoCode;
+        params.promoCode = promoCode;
       }
 
-      const payloadAsQueryParams = new URLSearchParams({ ...payload });
-
-      const urlLink = `${BROKER_LINKS.pubgm}${payloadAsQueryParams.toString()}`;
-
       try {
-        const response = await fetch(urlLink);
+        const response = await apiService.get(BROKER_LINKS["pubgm"], params);
 
         const redirectLink = await response.text();
 

@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.13.0",
@@ -22,7 +23,7 @@
     "eject": "react-scripts eject",
     "upload": "scp -i ~/Desktop/aws-payments-front.pem -r build ec2-user@35.158.145.211:~/build",
     "clean": "",
-    "deploy": "npm run build:prod && npm run clean && npm run upload"
+    "deploy": "npm run build:prod  && npm run clean && npm run upload"
   },
   "eslintConfig": {
     "extends": [

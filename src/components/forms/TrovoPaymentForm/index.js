@@ -3,6 +3,7 @@ import { PaymentTypes } from "../../PaymentTypes";
 import { BROKER_LINKS, CURRENCY_TYPE } from "../../../utils/constants";
 import { updatePaymentType } from "../../../utils/formatters";
 import { SubmitButton } from "../../buttons/SubmitButton";
+import apiService from "services/api";
 import s from "./index.module.scss";
 
 export const TrovoPaymentForm = ({ selectedCard, className }) => {
@@ -72,23 +73,23 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
 
       const { value: amount } = selectedCard;
 
-      const payload = {
+      const params = {
         currency,
         username,
         promoCode,
         "payment-type": updatePaymentType(paymentType, amount),
         platform: "TROVO",
-        phoneNumber,
       };
 
-      const payloadAsQueryParams = new URLSearchParams({ ...payload });
-
-      const urlLink = `${
-        BROKER_LINKS[paymentType]
-      }${payloadAsQueryParams.toString()}`;
+      if (phoneNumber) {
+        params.phoneNumber = phoneNumber;
+      }
 
       try {
-        const response = await fetch(urlLink);
+        const response = await apiService.get(
+          BROKER_LINKS[paymentType],
+          params
+        );
 
         const redirectLink = await response.text();
 
