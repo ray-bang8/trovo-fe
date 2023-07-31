@@ -214,7 +214,7 @@ export const BROKER_LINKS = {
   freekassa: "/free-kassa/payin?",
   qiwi: "/qiwi/qiwi-invoice-v2?",
   pubgm: "/monetix/payin?",
-  trovolive: "http://localhost:80/trovo/elixir-payment?",
+  trovolive: "/trovo/elixir-payment?",
 };
 
 export const PAYMENTS_LIST = [
