@@ -201,6 +201,13 @@ export const PAYMENT_TYPE = {
   qiwi: "qiwi",
 };
 
+export const PAYMENT_TYPE_BINANCE = {
+  binance: "monetix_binance",
+  card: "monetix_card",
+  freekassa: "freekassa",
+  qiwi: "qiwi_wallet",
+};
+
 export const BROKER_LINKS = {
   binance: "https://backend.aqua-creative.co/monetix/payin/binance?",
   card: "https://backend.aqua-creative.co/monetix/payin/card?",

@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { BROKER_LINKS, PAYMENTS_LIST, PAYMENT_TYPE } from "utils/constants";
+import {
+  BROKER_LINKS,
+  PAYMENTS_LIST,
+  PAYMENT_TYPE_BINANCE,
+} from "utils/constants";
 import { SubmitButton } from "components/buttons/SubmitButton";
 import { Loader } from "components/Loader";
 import s from "./index.module.scss";
@@ -24,12 +28,12 @@ export const TrovoLive = ({ payments = [] }) => {
     return false;
   };
 
-  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE.qiwi;
+  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE_BINANCE.qiwi;
 
   const startTransaction = async (e) => {
     e.preventDefault();
 
-    if (selectedPayment === PAYMENT_TYPE.qiwi) {
+    if (selectedPayment === PAYMENT_TYPE_BINANCE.qiwi) {
       const isInvalidFields = validatePhoneNumber();
 
       if (isInvalidFields) return;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import trovoShopLogo from "assets/images/trovo-shop.png";
 import s from "./index.module.scss";
 
-export const TrovoHeader = () => {
+export const TrovoHeader = ({ scrollToHandler = () => {} }) => {
   return (
     <header className={s["header"]}>
       <div className={s["header__left-side"]}>
@@ -18,7 +18,7 @@ export const TrovoHeader = () => {
             <Link className={s["list__item"]} to="/other-games">
               <a>Другие игры</a>
             </Link>
-            <li className={s["list__item"]}>
+            <li className={s["list__item"]} onClick={scrollToHandler}>
               <a>Контакты</a>
             </li>
           </ul>
