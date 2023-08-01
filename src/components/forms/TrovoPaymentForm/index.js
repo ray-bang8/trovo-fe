@@ -76,13 +76,16 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
       const params = {
         currency,
         username,
-        promoCode,
         "payment-type": updatePaymentType(paymentType, amount),
         platform: "TROVO",
       };
 
       if (phoneNumber) {
         params.phoneNumber = phoneNumber;
+      }
+
+      if (promoCode) {
+        params.promoCode = promoCode;
       }
 
       try {

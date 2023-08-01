@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "upload": "scp -i ~/Desktop/aws-payments-front.pem -r build ec2-user@35.158.145.211:~/build",
     "clean": "",
-    "deploy": "npm run build:prod  && npm run clean && npm run upload"
+    "deploy:prod": "npm run build:prod  && npm run clean && npm run upload",
+    "deploy:dev": "npm run build:dev && npm run clean && npm run upload"
   },
   "eslintConfig": {
     "extends": [
