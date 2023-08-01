@@ -79,8 +79,9 @@ export const TrovoLive = ({ payments = [] }) => {
     try {
       const response = await apiService.get(urlLink);
 
-      const redirectLink = await response.text();
-      window.location = redirectLink;
+      // const redirectLink = await response.text();
+
+      window.location = response;
     } catch (error) {
       console.log(error, 123);
     } finally {
