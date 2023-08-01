@@ -1,9 +1,9 @@
 import { useState } from "react";
 import {
   BROKER_LINKS,
-  PAYMENTS_LIST,
   PAYMENT_TYPE_BINANCE,
   PAYMENT_TYPE,
+  PAYMENTS_LIST_BINANCE,
 } from "utils/constants";
 import { SubmitButton } from "components/buttons/SubmitButton";
 import { Loader } from "components/Loader";
@@ -30,9 +30,7 @@ export const TrovoLive = ({ payments = [] }) => {
     return false;
   };
 
-  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE.qiwi;
-
-  console.log(isMobileNumberShow, selectedPayment);
+  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE_BINANCE.qiwi;
 
   const startTransaction = async (e) => {
     e.preventDefault();
@@ -46,8 +44,11 @@ export const TrovoLive = ({ payments = [] }) => {
     const params = {
       paymentId: id,
       paymentMethod: selectedPayment,
-      phoneNumber,
     };
+
+    if (phoneNumber) {
+      params.phoneNumber = phoneNumber;
+    }
 
     setLoading(true);
 
@@ -72,7 +73,7 @@ export const TrovoLive = ({ payments = [] }) => {
           <>
             <h3 className={s["title"]}>Способы оплаты</h3>
             <ul className={s["payments-list"]}>
-              {PAYMENTS_LIST.map((broker, index) => {
+              {PAYMENTS_LIST_BINANCE.map((broker, index) => {
                 const isPaymentSelected = selectedPayment === broker.name;
 
                 return (

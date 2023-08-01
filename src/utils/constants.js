@@ -214,7 +214,7 @@ export const BROKER_LINKS = {
   freekassa: "/free-kassa/payin?",
   qiwi: "/qiwi/qiwi-invoice-v2?",
   pubgm: "/monetix/payin?",
-  trovolive: "http://localhost:80/trovo/elixir-payment?",
+  trovolive: "/trovo/elixir-payment?",
 };
 
 export const PAYMENTS_LIST = [
@@ -235,6 +235,29 @@ export const PAYMENTS_LIST = [
   // },
   {
     name: PAYMENT_TYPE.qiwi,
+    redirect_link: BROKER_LINKS.qiwi,
+    image: qiwiImage,
+  },
+];
+
+export const PAYMENTS_LIST_BINANCE = [
+  {
+    name: PAYMENT_TYPE_BINANCE.binance,
+    redirect_link: BROKER_LINKS.binance,
+    image: binanceImage,
+  },
+  {
+    name: PAYMENT_TYPE_BINANCE.card,
+    redirect_link: BROKER_LINKS.card,
+    image: cardImage,
+  },
+  // {
+  //   name: PAYMENT_TYPE.freekassa,
+  //   redirect_link: BROKER_LINKS.freekassa,
+  //   image: freekassaImage,
+  // },
+  {
+    name: PAYMENT_TYPE_BINANCE.qiwi,
     redirect_link: BROKER_LINKS.qiwi,
     image: qiwiImage,
   },
