@@ -25,9 +25,11 @@ export const TrovoLive = ({ payments = [] }) => {
     const phoneNumberPattern =
       /^(91|994|82|372|375|374|44|998|972|66|90|507|7|77|380|371|370|996|9955|992|373|84)[0-9]{6,14}$/;
 
-    if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
-      setPhoneNumberError(true);
-      return true;
+    if (selectedPayment === PAYMENT_TYPE_BINANCE.qiwi) {
+      if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
+        setPhoneNumberError(true);
+        return true;
+      }
     }
 
     setPhoneNumberError(false);
@@ -46,6 +48,8 @@ export const TrovoLive = ({ payments = [] }) => {
     e.preventDefault();
 
     const isInvalidFields = isFieldsHasErrors();
+
+    console.log(isInvalidFields);
 
     if (isInvalidFields) return;
 
@@ -102,7 +106,10 @@ export const TrovoLive = ({ payments = [] }) => {
                     className={`${s["broker"]} ${
                       isPaymentSelected && s["broker--selected"]
                     }`}
-                    onClick={() => setSelectedPayment(broker.name)}
+                    onClick={() => {
+                      setPhoneNumberError(false);
+                      setSelectedPayment(broker.name);
+                    }}
                   >
                     <img
                       src={broker.image}
