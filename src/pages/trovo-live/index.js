@@ -1,9 +1,9 @@
 import { useState } from "react";
 import {
   BROKER_LINKS,
-  PAYMENTS_LIST,
   PAYMENT_TYPE_BINANCE,
   PAYMENT_TYPE,
+  PAYMENTS_LIST_BINANCE,
 } from "utils/constants";
 import { SubmitButton } from "components/buttons/SubmitButton";
 import { Loader } from "components/Loader";
@@ -22,20 +22,36 @@ export const TrovoLive = ({ payments = [] }) => {
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
 
-    if (name_field.length <= 0) {
-      setPhoneNumberError(true);
-      return true;
+    const phoneNumberPattern =
+      /^(91|994|82|372|375|374|44|998|972|66|90|507|7|77|380|371|370|996|9955|992|373|84)[0-9]{6,14}$/;
+
+    if (selectedPayment === PAYMENT_TYPE_BINANCE.qiwi) {
+      if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
+        setPhoneNumberError(true);
+        return true;
+      }
     }
+
     setPhoneNumberError(false);
     return false;
   };
 
-  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE.qiwi;
+  const isMobileNumberShow = selectedPayment === PAYMENT_TYPE_BINANCE.qiwi;
 
-  console.log(isMobileNumberShow, selectedPayment);
+  const isFieldsHasErrors = () => {
+    let phoneNumberError = validatePhoneNumber();
+
+    return phoneNumberError;
+  };
 
   const startTransaction = async (e) => {
     e.preventDefault();
+
+    const isInvalidFields = isFieldsHasErrors();
+
+    console.log(isInvalidFields);
+
+    if (isInvalidFields) return;
 
     if (selectedPayment === PAYMENT_TYPE.qiwi) {
       const isInvalidFields = validatePhoneNumber();
@@ -46,16 +62,24 @@ export const TrovoLive = ({ payments = [] }) => {
     const params = {
       paymentId: id,
       paymentMethod: selectedPayment,
-      phoneNumber,
     };
+
+    if (phoneNumber) {
+      params.phone = phoneNumber;
+    }
+
+    const payloadAsQueryParams = new URLSearchParams({ ...params });
+
+    const urlLink = `${
+      BROKER_LINKS["trovolive"]
+    }${payloadAsQueryParams.toString()}`;
 
     setLoading(true);
 
     try {
-      const response = await apiService.get(BROKER_LINKS["trovolive"], params);
+      const response = await apiService.get(urlLink);
 
-      const redirectLink = await response.text();
-      window.location = redirectLink;
+      window.location = response;
     } catch (error) {
       console.log(error, 123);
     } finally {
@@ -72,7 +96,7 @@ export const TrovoLive = ({ payments = [] }) => {
           <>
             <h3 className={s["title"]}>Способы оплаты</h3>
             <ul className={s["payments-list"]}>
-              {PAYMENTS_LIST.map((broker, index) => {
+              {PAYMENTS_LIST_BINANCE.map((broker, index) => {
                 const isPaymentSelected = selectedPayment === broker.name;
 
                 return (
@@ -81,7 +105,10 @@ export const TrovoLive = ({ payments = [] }) => {
                     className={`${s["broker"]} ${
                       isPaymentSelected && s["broker--selected"]
                     }`}
-                    onClick={() => setSelectedPayment(broker.name)}
+                    onClick={() => {
+                      setPhoneNumberError(false);
+                      setSelectedPayment(broker.name);
+                    }}
                   >
                     <img
                       src={broker.image}
@@ -111,6 +138,11 @@ export const TrovoLive = ({ payments = [] }) => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
+            {phoneNumberError && (
+              <p style={{ color: "red" }}>
+                Неправильный формат номера телефона
+              </p>
+            )}
             <SubmitButton handleSubmit={startTransaction} />
             <footer className={s["trovo-live__footer"]}>
               By clicking "Pay Now", you agree to{" "}

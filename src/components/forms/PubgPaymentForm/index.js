@@ -47,9 +47,7 @@ export const PubgPaymentForm = ({ selectedCard, className }) => {
       try {
         const response = await apiService.get(BROKER_LINKS["pubgm"], params);
 
-        const redirectLink = await response.text();
-
-        window.location = redirectLink;
+        window.location = response;
       } catch (error) {
         console.log(error, 123);
       }

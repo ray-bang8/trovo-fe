@@ -240,6 +240,29 @@ export const PAYMENTS_LIST = [
   },
 ];
 
+export const PAYMENTS_LIST_BINANCE = [
+  {
+    name: PAYMENT_TYPE_BINANCE.binance,
+    redirect_link: BROKER_LINKS.binance,
+    image: binanceImage,
+  },
+  {
+    name: PAYMENT_TYPE_BINANCE.card,
+    redirect_link: BROKER_LINKS.card,
+    image: cardImage,
+  },
+  // {
+  //   name: PAYMENT_TYPE.freekassa,
+  //   redirect_link: BROKER_LINKS.freekassa,
+  //   image: freekassaImage,
+  // },
+  {
+    name: PAYMENT_TYPE_BINANCE.qiwi,
+    redirect_link: BROKER_LINKS.qiwi,
+    image: qiwiImage,
+  },
+];
+
 export const CURRENCY_TYPE = {
   RUB: "RUB",
   EUR: "EUR",

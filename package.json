@@ -24,7 +24,11 @@
     "upload": "scp -i ~/Desktop/aws-payments-front.pem -r build ec2-user@35.158.145.211:~/build",
     "clean": "",
     "deploy:prod": "npm run build:prod  && npm run clean && npm run upload",
+<<<<<<< HEAD
     "deploy:dev": "npm run build:dev  && npm run clean && npm run upload"
+=======
+    "deploy:dev": "npm run build:dev && npm run clean && npm run upload"
+>>>>>>> develop
   },
   "eslintConfig": {
     "extends": [
