@@ -97,9 +97,7 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
           params
         );
 
-        const redirectLink = await response.text();
-
-        window.location = redirectLink;
+        window.location = response;
       } catch (error) {
         console.log(error, 123);
       }
