@@ -21,8 +21,11 @@ export const PubgGrid = () => {
     <div className={s["pubg-grid"]}>
       <div className={s["pubg-grid__title"]}>
         <h1 className={s["pubg-grid__text"]}>Пополнение Счета</h1>
-        <br />
-        <h3 className={s["pubg-grid__text"]}>PUBG MOBILE</h3>
+        <h3
+          className={s["pubg-grid__text"] + " " + s["pubg-grid__text--colored"]}
+        >
+          PUBG MOBILE
+        </h3>
       </div>
       <div className={s["pubg-grid__cards"]}>
         {utilConstants.pubgCards.map((card, i) => (

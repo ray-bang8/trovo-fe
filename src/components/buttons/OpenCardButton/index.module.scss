@@ -1,0 +1,17 @@
+.open-card-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  background-color: rgb(42, 42, 42);
+  border-radius: 50%;
+
+  @media (min-width: 1024px) {
+    width: 56px;
+    height: 56px;
+  }
+}

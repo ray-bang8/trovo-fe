@@ -14,90 +14,94 @@ import qiwiImage from "../assets/logo/qiwi.jpg";
 import cardImage from "../assets/logo/visa-mastercard.png";
 import binanceImage from "../assets/logo/binance.jpg";
 import freekassaImage from "../assets/logo/freekassa.jpg";
+import pubgLogo from "assets/logo/pubg-logo.png";
+import mobileLegends from "assets/logo/mobile-legends.jpg";
+import genshinImpact from "assets/logo/genshin-impact.png";
+import stateOfSurvival from "assets/logo/state-of-survival.jpeg";
 
 const elixirCards = [
   {
     value: 1,
     title: "1 Elixir",
     text: "1 Elixir",
-    cost: "9.29 ₽",
+    cost: "₽ 9.29",
     src: oneElixir,
   },
   {
     value: 100,
     title: "100 Elixirs",
     text: "100 Elixirs",
-    cost: "92.9 ₽",
+    cost: "₽ 92.9",
     src: oneHundredElixirs,
   },
   {
     value: 500,
     title: "500 Elixirs",
     text: "500 Elixirs",
-    cost: "465 ₽",
+    cost: "₽ 465",
     src: fiveHundredElixirs,
   },
   {
     value: 1000,
     title: "1000 Elixirs + 10 FREE",
     text: "1010 Elixirs",
-    cost: "929 ₽",
+    cost: "₽ 929",
     src: fiveHundredElixirs,
   },
   {
     value: 2000,
     title: "2000 Elixirs + 20 FREE",
     text: "2020 Elixirs",
-    cost: "1860 ₽",
+    cost: "₽ 1860",
     src: twoThousandElixirs,
   },
   {
     value: 5000,
     title: "5000 Elixirs + 100 FREE",
     text: "5100 Elixirs",
-    cost: "4640 ₽",
+    cost: "₽ 4640",
     src: fiveThousandElixirs,
   },
   {
     value: 10000,
     title: "10000 Elixirs + 300 FREE",
     text: "10300 Elixirs",
-    cost: "9290 ₽",
+    cost: "₽ 9290",
     src: fiveThousandElixirs,
   },
   {
     value: 25000,
     title: "25000 Elixirs + 1000 FREE",
     text: "26000 Elixirs",
-    cost: "23220 ₽",
+    cost: "₽ 23220",
     src: twentyFiveThousandElixirs,
   },
   {
     value: 50000,
     title: "50000 Elixirs + 2000 FREE",
     text: "52000 Elixirs",
-    cost: "46450 ₽",
+    cost: "₽ 46450",
     src: twentyFiveThousandElixirs,
   },
   {
     value: 100000,
     title: "100000 Elixirs + 5000 FREE",
     text: "105000 Elixirs",
-    cost: "92900 ₽",
+    cost: "₽ 92900",
     src: oneHundredThousandElixirs,
   },
   {
     value: 250000,
     title: "250000 Elixirs + 12500 FREE",
     text: "262500 Elixirs",
-    cost: "232250 ₽",
+    cost: "₽ 232250",
     src: oneHundredThousandElixirs,
   },
   {
     value: 500000,
     title: "500000 Elixirs + 25000 FREE",
     text: "525000 Elixirs",
-    cost: "464500 ₽",
+    cost: "₽ 464500",
     src: fiveHundredThousandElixirs,
   },
 ];
@@ -107,56 +111,56 @@ const pubgCards = [
     value: 1,
     title: "60 UC",
     text: "60 Unknown Cash",
-    cost: "83.90 ₽",
+    cost: "₽ 83.90",
     src: sixtyUC,
   },
   {
     value: 300,
     title: "300 UC + 25 FREE",
     text: "325 Unknown Cash",
-    cost: "399.90 ₽",
+    cost: "₽ 399.90",
     src: sixtyUC,
   },
   {
     value: 600,
     title: "600 UC + 60 FREE",
     text: "660 Unknown Cash",
-    cost: "799.90 ₽",
+    cost: "₽ 799.90",
     src: threeHundredUC,
   },
   {
     value: 1500,
     title: "1500 UC + 300 FREE",
     text: "1800 Unknown Cash",
-    cost: "1,999.00 ₽",
+    cost: "₽ 1,999.00",
     src: threeHundredUC,
   },
   {
     value: 6000,
     title: "6000 UC + 2100 FREE",
     text: "8100 Unknown Cash",
-    cost: "8,149.90 ₽",
+    cost: "₽ 8,149.90",
     src: sixThousandUC,
   },
   {
     value: 12000,
     title: "16200 UC + 4200 FREE",
     text: "16200 Unknown Cash",
-    cost: "16,139.90 ₽",
+    cost: "₽ 16,139.90",
     src: thirtyThousandUC,
   },
   {
     value: 18000,
     title: "18000 UC + 6300 FREE",
     text: "24300 Unknown Cash",
-    cost: "24,545.90 ₽",
+    cost: "₽ 24,545.90",
     src: thirtyThousandUC,
   },
   {
     value: 24000,
     title: "24000 UC + 8400 FREE",
     text: "32400 Unknown Cash",
-    cost: "32,745.90 ₽",
+    cost: "₽ 32,745.90",
     src: thirtyThousandUC,
   },
 ];
@@ -269,10 +273,30 @@ export const CURRENCY_TYPE = {
   USD: "USD",
 };
 
+export const otherGames = [
+  {
+    name: "PUBG UC CODE",
+    imgSrc: pubgLogo,
+  },
+  {
+    name: "MOBILE LEGENDS: BANG BANG TOP UP",
+    imgSrc: mobileLegends,
+  },
+  {
+    name: "GENSHIN IMPACT",
+    imgSrc: mobileLegends,
+  },
+  {
+    name: "STATE OF SURVIVAL TOP UP",
+    imgSrc: stateOfSurvival,
+  },
+];
+
 const constants = {
   elixirCards,
   pubgCards,
   managers,
+  otherGames,
 };
 
 export default constants;

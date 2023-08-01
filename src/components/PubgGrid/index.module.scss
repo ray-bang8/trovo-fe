@@ -12,6 +12,10 @@
   text-align: center;
   color: #fff;
   font-size: 40px;
+
+  &--colored {
+    color: #fab833;
+  }
 }
 
 .pubg-grid__cards {
@@ -30,8 +34,7 @@
     gap: 30px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
   }
 }

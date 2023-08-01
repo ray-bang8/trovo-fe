@@ -2,11 +2,10 @@
   width: 100%;
   max-width: 160px;
   height: 250px;
-  background: #1f1f1f;
-  border-radius: 10px;
+  background: rgb(31, 31, 31);
+  border-radius: 30px;
   cursor: pointer;
   transition: 500ms linear;
-  padding: 10px;
 
   &:hover {
     box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
@@ -15,16 +14,17 @@
   }
 
   @media (min-width: 576px) {
-    min-width: 180px;
+    min-width: 200px;
   }
 
   @media (min-width: 744px) {
-    min-width: 190px;
+    min-width: 220px;
   }
 
   @media (min-width: 1024px) {
-    min-width: 225px;
-    height: auto;
+    min-width: 280px;
+    height: 370px;
+    padding: 20px;
   }
 }
 
@@ -39,12 +39,13 @@
 }
 
 .pubg-card__bottom {
-  padding-left: 13px;
-  padding-right: 13px;
-  padding-bottom: 20px;
+  display: grid;
+  gap: 5px;
+  padding: 15px;
 
   @media (min-width: 1024px) {
     padding-left: 20px;
+    gap: 15px;
   }
 }
 
@@ -52,18 +53,27 @@
   color: #fff;
   font-size: 14px;
 
-  &--cost {
-    align-self: flex-end;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-
-  &--bold {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
   @media (min-width: 1024px) {
     font-size: 18px;
   }
+
+  &--gray {
+    color: rgb(173 163 163);
+    font-weight: bold;
+  }
+
+  &--cost {
+    font-size: 12px;
+    font-weight: bold;
+
+    @media (min-width: 1024px) {
+      font-size: 25px;
+    }
+  }
+}
+
+.pubg-card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

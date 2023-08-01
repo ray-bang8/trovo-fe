@@ -49,8 +49,6 @@ export const TrovoLive = ({ payments = [] }) => {
 
     const isInvalidFields = isFieldsHasErrors();
 
-    console.log(isInvalidFields);
-
     if (isInvalidFields) return;
 
     if (selectedPayment === PAYMENT_TYPE.qiwi) {
