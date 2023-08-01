@@ -22,18 +22,32 @@ export const TrovoLive = ({ payments = [] }) => {
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
 
-    if (name_field.length <= 0) {
+    const phoneNumberPattern =
+      /^(91|994|82|372|375|374|44|998|972|66|90|507|7|77|380|371|370|996|9955|992|373|84)[0-9]{6,14}$/;
+
+    if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
       setPhoneNumberError(true);
       return true;
     }
+
     setPhoneNumberError(false);
     return false;
   };
 
   const isMobileNumberShow = selectedPayment === PAYMENT_TYPE_BINANCE.qiwi;
 
+  const isFieldsHasErrors = () => {
+    let phoneNumberError = validatePhoneNumber();
+
+    return phoneNumberError;
+  };
+
   const startTransaction = async (e) => {
     e.preventDefault();
+
+    const isInvalidFields = isFieldsHasErrors();
+
+    if (isInvalidFields) return;
 
     if (selectedPayment === PAYMENT_TYPE.qiwi) {
       const isInvalidFields = validatePhoneNumber();
@@ -118,6 +132,11 @@ export const TrovoLive = ({ payments = [] }) => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
+            {phoneNumberError && (
+              <p style={{ color: "red" }}>
+                Неправильный формат номера телефона
+              </p>
+            )}
             <SubmitButton handleSubmit={startTransaction} />
             <footer className={s["trovo-live__footer"]}>
               By clicking "Pay Now", you agree to{" "}
