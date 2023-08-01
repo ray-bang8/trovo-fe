@@ -47,13 +47,19 @@ export const TrovoLive = ({ payments = [] }) => {
     };
 
     if (phoneNumber) {
-      params.phoneNumber = phoneNumber;
+      params.phone = phoneNumber;
     }
+
+    const payloadAsQueryParams = new URLSearchParams({ ...params });
+
+    const urlLink = `${
+      BROKER_LINKS["trovolive"]
+    }${payloadAsQueryParams.toString()}`;
 
     setLoading(true);
 
     try {
-      const response = await apiService.get(BROKER_LINKS["trovolive"], params);
+      const response = await apiService.get(urlLink);
 
       const redirectLink = await response.text();
       window.location = redirectLink;

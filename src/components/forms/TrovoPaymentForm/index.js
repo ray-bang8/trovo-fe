@@ -84,7 +84,7 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
       };
 
       if (phoneNumber) {
-        params.phoneNumber = phoneNumber;
+        params.phone = phoneNumber;
       }
 
       if (promoCode) {
