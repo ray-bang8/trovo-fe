@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbb94748.css",
-    "main.js": "/static/js/main.48902351.js",
+    "main.css": "/static/css/main.3f7cedef.css",
+    "main.js": "/static/js/main.e8461639.js",
     "static/js/787.ac064c8a.chunk.js": "/static/js/787.ac064c8a.chunk.js",
     "static/media/100000-250000Elixirs.png": "/static/media/100000-250000Elixirs.84aec80fb6cc38dbeffe.png",
     "static/media/500000Elixirs.png": "/static/media/500000Elixirs.74651e5fe80653eda667.png",
@@ -20,12 +20,12 @@
     "static/media/1pubg.png": "/static/media/1pubg.55fb1c1d67e9398527f3.png",
     "static/media/qiwi.jpg": "/static/media/qiwi.60b0b64dfcaca101738e.jpg",
     "index.html": "/index.html",
-    "main.cbb94748.css.map": "/static/css/main.cbb94748.css.map",
-    "main.48902351.js.map": "/static/js/main.48902351.js.map",
+    "main.3f7cedef.css.map": "/static/css/main.3f7cedef.css.map",
+    "main.e8461639.js.map": "/static/js/main.e8461639.js.map",
     "787.ac064c8a.chunk.js.map": "/static/js/787.ac064c8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbb94748.css",
-    "static/js/main.48902351.js"
+    "static/css/main.3f7cedef.css",
+    "static/js/main.e8461639.js"
   ]
 }

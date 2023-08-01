@@ -36,7 +36,10 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
 
-    if (name_field.length <= 0) {
+    const phoneNumberPattern =
+      /^(91|994|82|372|375|374|44|998|972|66|90|507|7|77|380|371|370|996|9955|992|373|84)[0-9]{6,14}$/;
+
+    if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
       setPhoneNumberError(true);
       return true;
     }
@@ -154,16 +157,23 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
           setIsMobileNumberShow={setIsMobileNumberShow}
         ></PaymentTypes>
         {isMobileNumberShow && (
-          <input
-            className={`${s["form-fields__input"]} ${
-              phoneNumberError && s["form-fields__input--error"]
-            }`}
-            placeholder="Номер телефона"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            onBlur={validatePhoneNumber}
-            required
-          />
+          <>
+            <input
+              className={`${s["form-fields__input"]} ${
+                phoneNumberError && s["form-fields__input--error"]
+              }`}
+              placeholder="Номер телефона"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              onBlur={validatePhoneNumber}
+              required
+            />
+            {phoneNumberError && (
+              <p style={{ color: "red" }}>
+                Неправильный формат номера телефона
+              </p>
+            )}
+          </>
         )}
       </main>
       <SubmitButton handleSubmit={startTransaction(paymentType)} />
