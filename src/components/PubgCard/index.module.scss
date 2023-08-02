@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 160px;
   height: 250px;
-  background: rgb(62, 61,61);
+  background: rgb(31, 31, 31);
   border-radius: 30px;
   cursor: pointer;
   transition: 500ms linear;
@@ -54,7 +54,7 @@
   color: #fff;
   font-size: 14px;
 
-  @media(min-width:744px) {
+  @media (min-width: 744px) {
     font-size: 16px;
   }
 
@@ -71,7 +71,7 @@
     font-size: 12px;
     font-weight: bold;
 
-    @media(min-width: 744px) {
+    @media (min-width: 744px) {
       font-size: 18px;
     }
 

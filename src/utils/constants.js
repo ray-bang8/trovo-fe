@@ -14,9 +14,9 @@ import qiwiImage from "../assets/logo/qiwi.jpg";
 import cardImage from "../assets/logo/visa-mastercard.png";
 import binanceImage from "../assets/logo/binance.jpg";
 import freekassaImage from "../assets/logo/freekassa.jpg";
-import pubgLogo from "assets/logo/pubg-logo.png";
+import pubgLogo from "assets/logo/pubg-logo.jpg";
 import mobileLegends from "assets/logo/mobile-legends.jpg";
-import genshinImpact from "assets/logo/genshin-impact.png";
+import genshinImpact from "assets/logo/genshin-impact.jpeg";
 import stateOfSurvival from "assets/logo/state-of-survival.jpeg";
 
 const elixirCards = [
@@ -279,7 +279,13 @@ export const otherGames = [
     imgSrc: pubgLogo,
   },
   {
-    name: "MOBILE LEGENDS: BANG BANG TOP UP",
+    name: (
+      <>
+        MOBILE LEGENDS:
+        <br />
+        BANG BANG TOP UP
+      </>
+    ),
     imgSrc: mobileLegends,
   },
   {

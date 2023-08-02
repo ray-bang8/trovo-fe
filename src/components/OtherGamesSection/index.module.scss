@@ -1,0 +1,18 @@
+.other-games-section {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  gap: 30px;
+}
+
+.other-games-section__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.other-games-section__text {
+  color: #fff;
+  font-size: 34px;
+}

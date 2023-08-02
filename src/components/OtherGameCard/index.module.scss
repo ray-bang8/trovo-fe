@@ -1,0 +1,55 @@
+.other-game-card {
+  position: relative;
+}
+
+.other-game-card__wallpaper {
+  position: relative;
+  width: 287px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: inset 0px -66px 104px 5px #000000;
+}
+
+.other-game-card__img {
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.other-game-card__logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.other-game-card__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+.other-game-card__text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
