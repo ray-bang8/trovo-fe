@@ -284,7 +284,7 @@ export const otherGames = [
   },
   {
     name: "GENSHIN IMPACT",
-    imgSrc: mobileLegends,
+    imgSrc: genshinImpact,
   },
   {
     name: "STATE OF SURVIVAL TOP UP",

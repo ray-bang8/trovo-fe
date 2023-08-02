@@ -10,6 +10,11 @@
   background-color: rgb(42, 42, 42);
   border-radius: 50%;
 
+  @media(min-width:744px) {
+    width: 38px;
+    height: 38px;
+  }
+
   @media (min-width: 1024px) {
     width: 56px;
     height: 56px;
