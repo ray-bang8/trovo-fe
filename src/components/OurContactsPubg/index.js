@@ -3,14 +3,13 @@ import constants from "../../utils/constants";
 import s from "./index.module.scss";
 
 export const OurContactsPubg = ({ anchorRef = null }) => {
-  let last = constants.managers.length - 1;
-  let lastManager = constants.managers[last];
-
   return (
     <div className={s["our-contacts-pubg"]} ref={anchorRef}>
-      <h3 className={s["our-contacts-pubg__title"]}>Наши Контакты!</h3>
+      <h2 className={s["our-contacts-pubg__title"]}>НАШИ МЕНЕДЖЕРА</h2>
       <div className={s["cards-wrapper"]}>
-        <ManagerCard {...lastManager} />
+        {constants.managers.map((item, index) => (
+          <ManagerCard {...item} />
+        ))}
       </div>
     </div>
   );

@@ -3,9 +3,19 @@
 
 .our-contacts-pubg {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 744px) {
+    min-width: 700px;
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 900px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 1200px;
+  }
 }
 
 .our-contacts-pubg__title {
@@ -13,6 +23,6 @@
   color: $white;
 }
 
-.cards-wrapper {
-  padding-top: 40px;
-}
+// .cards-wrapper {
+//   padding-top: 40px;
+// }

@@ -4,11 +4,31 @@
 
 .other-game-card__wallpaper {
   position: relative;
-  width: 287px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+
+  @media (min-width: 576px) {
+    width: 200px;
+    height: 250px;
+  }
+
+  @media (min-width: 744px) {
+    width: 220px;
+    height: 280px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 285px;
+    height: 350px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 287px;
+    height: 350px;
+  }
 }
 
 .overlay {

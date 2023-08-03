@@ -1,18 +1,50 @@
 .other-games-section {
   display: flex;
   flex-direction: column;
-  width: 1200px;
   gap: 30px;
+
+  @media (min-width: 744px) {
+    min-width: 700px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 900px;
+  }
+
+  @media (min-width: 1920px) {
+    flex-direction: column;
+    width: 1200px;
+  }
 }
 
 .other-games-section__cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
   gap: 20px;
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 744px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1280px) {
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .other-games-section__text {
   color: #fff;
   font-size: 34px;
+  align-self: flex-start;
+  // text-align: center;
+
+  @media (min-width: 1024px) {
+  }
 }

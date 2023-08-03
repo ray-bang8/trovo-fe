@@ -2,8 +2,8 @@
 @import "src/styles/variables.scss";
 
 .managers-section-wrapper {
-  @include flex-column-center();
-
+  display: flex;
+  gap: 100px;
   width: 100%;
   padding: 50px 0;
 }

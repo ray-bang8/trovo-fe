@@ -2,8 +2,6 @@
 @import "src/styles/variables.scss";
 
 .manager-card {
-  @include flex-column-center();
-
   color: $white;
   row-gap: 15px;
   padding: 10px;
@@ -25,11 +23,37 @@
 }
 
 .manager-card__contacts {
-  @include flex-column-center();
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 10px;
+}
 
-  row-gap: 5px;
+.manager-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.manager-card__name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.manager-card__text {
+  font-size: 20px;
 }
 
 .contact__link {
   color: $link-gold;
+  text-decoration: none;
+  font-size: 20px;
+
+  &--trovo {
+    color: #4ab279;
+  }
+
+  &--telegram {
+    color: #09a6d6;
+  }
 }

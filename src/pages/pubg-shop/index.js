@@ -18,6 +18,7 @@ export const PubgMobile = () => {
       <OtherGamesSection />
       <hr className={s["solid-divider"]} />
       <HowPubgWorks />
+      <hr className={s["solid-divider"]} />
       <OurContactsPubg anchorRef={elementRef} />
       <Footer />
     </div>

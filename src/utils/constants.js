@@ -191,11 +191,6 @@ const managers = [
     trovo: "https://trovo.live/s/Kura0511",
     telegram: "https://t.me/Kura0511",
   },
-  {
-    name: "Наши Контакты",
-    trovo: "https://trovovip.com/",
-    telegram: "https://t.me/trovoshop_bot",
-  },
 ];
 
 export const PAYMENT_TYPE = {
