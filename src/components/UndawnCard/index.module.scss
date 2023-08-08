@@ -1,4 +1,4 @@
-.elixir-card {
+.undawn-card {
   width: 100%;
   max-width: 160px;
   height: 250px;
@@ -19,27 +19,28 @@
 
   @media (min-width: 744px) {
     min-width: 220px;
-    height: 260px;
+    height: 270px;
   }
 
   @media (min-width: 1024px) {
     min-width: 280px;
-    height: 370px;
+    height: 380px;
     padding: 20px;
   }
 }
 
-.elixir-card__img {
+.undawn-card__img {
   width: 100%;
   height: 144px;
   object-fit: contain;
+  margin-top: 5px;
 
   @media (min-width: 1024px) {
-    height: 170px;
+    height: 180px;
   }
 }
 
-.elixir-card__bottom {
+.undawn-card__bottom {
   display: grid;
   gap: 5px;
   padding: 15px;
@@ -50,7 +51,7 @@
   }
 }
 
-.elixir-card__text {
+.undawn-card__text {
   color: #fff;
   font-size: 14px;
 
@@ -81,7 +82,7 @@
   }
 }
 
-.elixir-card__info {
+.undawn-card__info {
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -2,58 +2,52 @@
 @import "src/styles/variables.scss";
 
 .how-pubg-works-wrapper {
-  // @include flex-column-center();
   display: flex;
-  width: 1200px;
-  padding: 50px 0;
+  justify-content: center;
+
+  min-width: 464px;
+  max-width: 464px;
 
   @media (min-width: 744px) {
     min-width: 700px;
+    max-width: 700px;
   }
 
   @media (min-width: 1024px) {
     min-width: 900px;
+    max-width: 900px;
   }
 
   @media (min-width: 1920px) {
-    width: 1200px;
+    min-width: 1200px;
+    max-width: 1200px;
   }
 }
 
 .how-pubg-works {
   @include flex-column-center();
 
-  width: 75%;
-  row-gap: 70px;
+  width: 100%;
+  row-gap: 45px;
+  align-items: center;
 }
 
 .how-pubg-works__title {
   font-size: 38px;
   color: $white;
-  align-self: flex-start;
+
+  // @media(min-width:744px) {
+  //   align-self: flex-start;
+  // }
 }
 
 .how-pubg-works__articles {
   @include flex-column-center();
 
   align-items: flex-start;
-  row-gap: 50px;
+  row-gap: 20px;
   color: $white;
-}
-
-.article {
-  @include flex-column-center();
-
-  align-items: flex-start;
-  row-gap: 15px;
-  max-width: 670px;
   width: 100%;
-  padding-left: 50px;
-  position: relative;
-}
-
-.trovo-link {
-  color: $link-gold;
 }
 
 .article__checkmark {
@@ -62,4 +56,8 @@
   left: -40px;
   width: 55px;
   height: 55px;
+}
+
+.accordion-element {
+  color: white;
 }

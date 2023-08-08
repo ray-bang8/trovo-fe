@@ -28,7 +28,7 @@
 
 .fill-balance__type {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 20px;
   width: 100%;
@@ -45,12 +45,33 @@
     transform: scale(1.05);
   }
 
+  &--pubg {
+    background: linear-gradient(90deg, rgb(12 11 11) 25%, rgb(57 52 43) 100%);
+  }
+
   &--trovo {
     background: -webkit-linear-gradient(left, #000002, #260166);
     background: -moz-linear-gradient(left, #000002, #260166);
     background: -ms-linear-gradient(left, #000002, #260166);
     background: -o-linear-gradient(left, #000002, #260166);
     background: linear-gradient(to right, #000002, #260166);
+  }
+
+  &--undawn {
+    background: linear-gradient(
+      90deg,
+      rgb(34 30 30) 27%,
+      rgb(246 121 0 / 22%) 100%
+    );
+  }
+
+  &--arena {
+    background: linear-gradient(
+      90deg,
+      rgb(45 45 45) 53%,
+      rgb(78, 73, 73) 79%,
+      rgb(147 139 139) 100%
+    );
   }
 }
 

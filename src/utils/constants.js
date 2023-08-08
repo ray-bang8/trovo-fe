@@ -18,6 +18,7 @@ import pubgLogo from "assets/logo/pubg-logo.jpg";
 import mobileLegends from "assets/logo/mobile-legends.jpg";
 import genshinImpact from "assets/logo/genshin-impact.jpeg";
 import stateOfSurvival from "assets/logo/state-of-survival.jpeg";
+import undawnLogo from "assets/logo/undawn.png";
 
 const elixirCards = [
   {
@@ -165,6 +166,65 @@ const pubgCards = [
   },
 ];
 
+const undawnCards = [
+  {
+    value: 1,
+    title: "60 UC",
+    text: "60 Unknown Cash",
+    cost: "₽ 75.76",
+    src: undawnLogo,
+  },
+  {
+    value: 300,
+    title: "300 UC + 25 FREE",
+    text: "325 Unknown Cash",
+    cost: "₽ 380.41",
+    src: undawnLogo,
+  },
+  {
+    value: 600,
+    title: "600 UC + 60 FREE",
+    text: "660 Unknown Cash",
+    cost: "₽ 772.16",
+    src: undawnLogo,
+  },
+  {
+    value: 1500,
+    title: "1500 UC + 300 FREE",
+    text: "1800 Unknown Cash",
+    cost: "₽ 1,988.66",
+    src: undawnLogo,
+  },
+  {
+    value: 6000,
+    title: "6000 UC + 2100 FREE",
+    text: "8100 Unknown Cash",
+    cost: "₽ 7,975.26",
+    src: undawnLogo,
+  },
+  {
+    value: 12000,
+    title: "16200 UC + 4200 FREE",
+    text: "16200 Unknown Cash",
+    cost: "₽ 18,875.26",
+    src: undawnLogo,
+  },
+  {
+    value: 18000,
+    title: "18000 UC + 6300 FREE",
+    text: "24300 Unknown Cash",
+    cost: "₽ 23,195.88",
+    src: undawnLogo,
+  },
+  {
+    value: 24000,
+    title: "24000 UC + 8400 FREE",
+    text: "32400 Unknown Cash",
+    cost: "₽ 30,824.74",
+    src: undawnLogo,
+  },
+];
+
 const managers = [
   {
     name: "Yeldorator",
@@ -190,6 +250,11 @@ const managers = [
     name: "Kura",
     trovo: "https://trovo.live/s/Kura0511",
     telegram: "https://t.me/Kura0511",
+  },
+  {
+    name: "Наши Контакты",
+    trovo: "https://trovovip.com/",
+    telegram: "https://t.me/trovoshop_bot",
   },
 ];
 
@@ -298,6 +363,7 @@ const constants = {
   pubgCards,
   managers,
   otherGames,
+  undawnCards,
 };
 
 export default constants;

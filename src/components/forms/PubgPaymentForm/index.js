@@ -57,7 +57,6 @@ export const PubgPaymentForm = ({ selectedCard, className }) => {
   return (
     <form className={`${className} ${s["payment-form"]}`}>
       <h2 className={s["form-title"]}>Оформление Заказа</h2>
-      <hr className={s["separator-line"]} />
       <span className={s["info-text"]}>
         UC Code будет отправлен на email, который вы укажете. Пожалуйста,
         убедитесь в правильности указанного email адреса!

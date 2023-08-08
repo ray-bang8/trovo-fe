@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { PaymentTypes } from "../../PaymentTypes";
-import { BROKER_LINKS, CURRENCY_TYPE } from "../../../utils/constants";
-import { updatePaymentType } from "../../../utils/formatters";
-import { SubmitButton } from "../../buttons/SubmitButton";
+import { useEffect, useState } from "react";
+import { PaymentTypes } from "components/PaymentTypes";
+import { BROKER_LINKS, CURRENCY_TYPE } from "utils/constants";
+import { updatePaymentType } from "utils/formatters";
+import { SubmitButton } from "components/buttons/SubmitButton";
 import apiService from "services/api";
 import s from "./index.module.scss";
 
-export const TrovoPaymentForm = ({ selectedCard, className }) => {
+export const UndawnPaymentForm = ({ selectedCard, className }) => {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
 
@@ -32,6 +32,8 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
     setUsernameError(false);
     return false;
   };
+
+  useEffect(() => console.log("hello"));
 
   const validatePhoneNumber = () => {
     let name_field = phoneNumber.trim();
@@ -80,7 +82,6 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
         currency,
         username,
         "payment-type": updatePaymentType(paymentType, amount),
-        platform: "TROVO",
       };
 
       if (phoneNumber) {
@@ -139,8 +140,6 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
             Валюта
           </option>
           <option value={CURRENCY_TYPE.RUB}>RUB</option>
-          <option value={CURRENCY_TYPE.USD}>USD</option>
-          <option value={CURRENCY_TYPE.EUR}>EUR</option>
         </select>
         <input
           className={s["form-fields__input"]}

@@ -1,0 +1,41 @@
+.undawn-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+  
+  .undawn-grid__text {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+  
+    &--colored {
+      color: #fab833;
+    }
+  }
+  
+  .undawn-grid__cards {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    gap: 15px;
+  
+    @media (min-width: 576px) {
+      gap: 30px;
+    }
+  
+    @media (min-width: 744px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  

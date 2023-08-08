@@ -11,8 +11,8 @@
 
 .form-title {
   position: relative;
-  font-size: 20px;
-  color: #000;
+  font-size: 32px;
+  color: #fff;
   font-weight: 700;
   text-align: center;
 }
@@ -24,7 +24,7 @@
 }
 
 .info-text {
-  color: #757575;
+  color: #cec3c3;
   font-size: 16px;
   padding: 10px;
   font-weight: 400;
@@ -41,7 +41,10 @@
 
 .form-fields__input,
 .form-fields__select {
-  height: 50px;
+  background-color: rgb(20, 20, 20);
+  color: #fff;
+  border-radius: 20px;
+  height: 60px;
   width: 100%;
   max-width: 500px;
   border: none;

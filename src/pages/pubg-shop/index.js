@@ -1,8 +1,8 @@
 import { HowPubgWorks } from "components/HowPubgWorks";
 import { PubgGrid } from "components/PubgGrid";
 import { PubgHeader } from "components/headers/PubgHeader";
-import { OurContactsPubg } from "components/OurContactsPubg";
 import { OtherGamesSection } from "components/OtherGamesSection";
+import { ManagersSection } from "components/ManagersSection";
 import { Footer } from "components/footer";
 import { useScrollTo } from "hooks/scrollTo";
 import s from "./index.module.scss";
@@ -19,7 +19,7 @@ export const PubgMobile = () => {
       <hr className={s["solid-divider"]} />
       <HowPubgWorks />
       <hr className={s["solid-divider"]} />
-      <OurContactsPubg anchorRef={elementRef} />
+      <ManagersSection anchorRef={elementRef} />
       <Footer />
     </div>
   );
