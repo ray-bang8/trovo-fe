@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   BROKER_LINKS,
   PAYMENT_TYPE_BINANCE,
-  PAYMENT_TYPE,
   PAYMENTS_LIST_BINANCE,
 } from "utils/constants";
 import { SubmitButton } from "components/buttons/SubmitButton";
@@ -53,7 +52,7 @@ export const TrovoLive = ({ payments = [] }) => {
 
     if (isInvalidFields) return;
 
-    if (selectedPayment === PAYMENT_TYPE.qiwi) {
+    if (selectedPayment === PAYMENT_TYPE_BINANCE.qiwi) {
       const isInvalidFields = validatePhoneNumber();
 
       if (isInvalidFields) return;

@@ -241,11 +241,11 @@ export const PAYMENTS_LIST = [
 ];
 
 export const PAYMENTS_LIST_BINANCE = [
-  {
-    name: PAYMENT_TYPE_BINANCE.binance,
-    redirect_link: BROKER_LINKS.binance,
-    image: binanceImage,
-  },
+  // {
+  //   name: PAYMENT_TYPE_BINANCE.binance,
+  //   redirect_link: BROKER_LINKS.binance,
+  //   image: binanceImage,
+  // },
   {
     name: PAYMENT_TYPE_BINANCE.card,
     redirect_link: BROKER_LINKS.card,
