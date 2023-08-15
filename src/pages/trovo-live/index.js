@@ -130,7 +130,7 @@ export const TrovoLive = ({ payments = [] }) => {
                               ? s["form-fields__input--visible"]
                               : ""
                           }`}
-              placeholder="Номер телефона"
+              placeholder="Номер телефона (пример: 792133557799)"
               type="tel"
               value={phoneNumber}
               onBlur={validatePhoneNumber}
@@ -139,7 +139,7 @@ export const TrovoLive = ({ payments = [] }) => {
             />
             {phoneNumberError && (
               <p style={{ color: "red" }}>
-                Неправильный формат номера телефона
+                Неправильный формат номера телефона (пример: 792133557799)
               </p>
             )}
             <SubmitButton handleSubmit={startTransaction} />
