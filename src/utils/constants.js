@@ -456,6 +456,7 @@ export const ARENA_BREAKOUT = {
   gridInfo: {
     title: "ARENA BREAKOUT",
     cards: arenaBreakoutCards,
+    productType: "arena_breakout_code",
   },
   howGameWorks: arenaBreakoutHowGameWorks,
 };
@@ -464,6 +465,7 @@ export const UNDAWN = {
   gridInfo: {
     title: "UNDAWN",
     cards: undawnCards,
+    productType: "undawn_redeem_code",
   },
   howGameWorks: undawnHowGameWorks,
 };

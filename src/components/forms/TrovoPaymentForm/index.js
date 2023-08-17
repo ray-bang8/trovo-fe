@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMask } from "@react-input/mask";
 import { PaymentTypes } from "../../PaymentTypes";
 import { BROKER_LINKS, CURRENCY_TYPE } from "utils/constants";
 import { updatePaymentType } from "utils/formatters";
@@ -33,13 +34,18 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
     return false;
   };
 
+  const inputRef = useMask({
+    mask: "+7 (___) ___-__-__",
+    replacement: { _: /\d/ },
+  });
+
   const validatePhoneNumber = () => {
-    let name_field = phoneNumber.trim();
+    let name_field = phoneNumber.replace(/[^0-9]/g, "");
 
     const phoneNumberPattern =
       /^(91|994|82|372|375|374|44|998|972|66|90|507|7|77|380|371|370|996|9955|992|373|84)[0-9]{6,14}$/;
 
-    if (name_field.length <= 0 || !phoneNumberPattern.test(phoneNumber)) {
+    if (name_field.length <= 0 || !phoneNumberPattern.test(name_field)) {
       setPhoneNumberError(true);
       return true;
     }
@@ -60,8 +66,7 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
   const isFieldsHasErrors = () => {
     let isNameError = validateUsername();
     let isCurrencyError = validateCurrency();
-    let phoneNumberError =
-      paymentType === "qiwi" ? validatePhoneNumber() : false;
+    let phoneNumberError = paymentType === "qiwi" ? validatePhoneNumber() : false;
 
     return isNameError || isCurrencyError || phoneNumberError;
   };
@@ -84,7 +89,7 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
       };
 
       if (phoneNumber) {
-        params.phone = phoneNumber;
+        params.phone = phoneNumber.replace(/[^0-9]/g, "");
       }
 
       if (promoCode) {
@@ -153,18 +158,19 @@ export const TrovoPaymentForm = ({ selectedCard, className }) => {
           paymentType={paymentType}
           setIsMobileNumberShow={setIsMobileNumberShow}
         ></PaymentTypes>
+        <input
+          className={`${s["form-fields__input"]} ${s["form-fields__input__phone"]} ${isMobileNumberShow && s["form-fields__input__phone__shown"]} ${
+            phoneNumberError && s["form-fields__input--error"]
+          }`}
+          ref={inputRef}
+          placeholder="+7 (___) ___-__-__"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          onBlur={validatePhoneNumber}
+          required
+        />
         {isMobileNumberShow && (
           <>
-            <input
-              className={`${s["form-fields__input"]} ${
-                phoneNumberError && s["form-fields__input--error"]
-              }`}
-              placeholder="Номер телефона"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              onBlur={validatePhoneNumber}
-              required
-            />
             {phoneNumberError && (
               <p style={{ color: "red" }}>
                 Неправильный формат номера телефона
