@@ -3,7 +3,7 @@ import { ElixirCard } from "../ElixirCard";
 import { TrovoModalPopup } from "../modals/TrovoModalPopup";
 import { useModalPopup } from "../../hooks/modalPopup";
 import { TrovoPaymentForm } from "../forms/TrovoPaymentForm";
-import utilConstants from "../../utils/constants";
+import utilConstants from "utils/constants";
 import s from "./index.module.scss";
 
 export const ElixirGrid = () => {

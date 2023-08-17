@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PaymentTypes } from "../../PaymentTypes";
-import { BROKER_LINKS, CURRENCY_TYPE } from "../../../utils/constants";
-import { updatePaymentType } from "../../../utils/formatters";
+import { BROKER_LINKS, CURRENCY_TYPE } from "utils/constants";
+import { updatePaymentType } from "utils/formatters";
 import { SubmitButton } from "../../buttons/SubmitButton";
 import apiService from "services/api";
 import s from "./index.module.scss";

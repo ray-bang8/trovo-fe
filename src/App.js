@@ -5,6 +5,7 @@ import { PubgMobile } from "pages/pubg-shop";
 import { OtherGames } from "pages/other-games";
 import { UndawnShop } from "pages/undawn-shop";
 import "./App.css";
+import { ArenaBreakoutShop } from "pages/arena-breakout-shop";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/pubg-shop" element={<PubgMobile />} />
           <Route path="/other-games" element={<OtherGames />} />
           <Route path="/undawn-shop" element={<UndawnShop />} />
+          <Route path="/arena-breakout-shop" element={<ArenaBreakoutShop />} />
         </Routes>
       </BrowserRouter>
     </>

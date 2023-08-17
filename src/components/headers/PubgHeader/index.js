@@ -4,9 +4,9 @@ import pubgShopLogo from "assets/images/pubg-shop.png";
 import s from "./index.module.scss";
 
 export const PubgHeader = ({ scrollToHandler = () => {} }) => {
-  const location = useLocation();
+  // const location = useLocation();
 
-  const shouldHideActivationMenu = location.pathname === "/other-games";
+  // const shouldHideActivationMenu = location.pathname === "/other-games";
 
   return (
     <header className={s["header"]}>
@@ -30,16 +30,16 @@ export const PubgHeader = ({ scrollToHandler = () => {} }) => {
       <div className={s["header__right-side"]}>
         <nav className={s["navbar"]}>
           <ul className={s["navbar__list"]}>
-            {!shouldHideActivationMenu && (
+            {/* {!shouldHideActivationMenu && (
               <li className={s["list__item"]}>
                 <a>Активация Кода</a>
               </li>
-            )}
+            )} */}
             <Link className={s["list__item"]} to="/other-games">
-              <a>Другие игры</a>
+              Другие игры
             </Link>
             <li className={s["list__item"]} onClick={scrollToHandler}>
-              <a>Контакты</a>
+              Контакты
             </li>
           </ul>
         </nav>

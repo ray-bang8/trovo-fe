@@ -49,7 +49,7 @@ export const FillBalance = () => {
           className={
             s["fill-balance__type"] + " " + s["fill-balance__type--arena"]
           }
-          to="/arena-shop"
+          to="/arena-breakout-shop"
         >
           <img
             className={s["fill-balance__logo"]}

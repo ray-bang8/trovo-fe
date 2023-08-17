@@ -1,5 +1,5 @@
 import { ManagerCard } from "components/ManagerCard";
-import constants from "../../utils/constants";
+import constants from "utils/constants";
 import s from "./index.module.scss";
 
 export const OurContactsPubg = ({ anchorRef = null }) => {
