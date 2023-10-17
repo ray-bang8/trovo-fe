@@ -2,6 +2,8 @@
   background: none repeat scroll 0 0;
   height: 100%;
   width: 100%;
+  min-height: 80px;
+  min-width: 100px;
 }
 .loader .loader_inner {
   animation: animate 1.5s linear infinite;

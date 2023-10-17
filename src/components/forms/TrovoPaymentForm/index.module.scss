@@ -51,6 +51,18 @@
   outline: none;
   padding: 12px;
   font-size: 1.2em;
+
+  &__phone {
+    display: none;
+
+    &__shown {
+      display: inline-block;
+    }
+    
+    &::before{
+      content: +7;
+    }
+  }
 }
 
 .form-fields__input--error,

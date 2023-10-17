@@ -1,4 +1,4 @@
-import constants from "../../utils/constants";
+import constants from "utils/constants";
 import { ManagerCard } from "../ManagerCard";
 import s from "./index.module.scss";
 

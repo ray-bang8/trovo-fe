@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PAYMENT_TYPE } from "../../utils/constants";
+import { PAYMENT_TYPE } from "utils/constants";
 import s from "./index.module.scss";
 
 export const PaymentTypes = ({

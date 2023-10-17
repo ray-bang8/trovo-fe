@@ -13,12 +13,12 @@ import thirtyThousandUC from "assets/pubg-ucs/32000pubg.png";
 import qiwiImage from "../assets/logo/qiwi.jpg";
 import cardImage from "../assets/logo/visa-mastercard.png";
 import binanceImage from "../assets/logo/binance.jpg";
-import freekassaImage from "../assets/logo/freekassa.jpg";
 import pubgLogo from "assets/logo/pubg-logo.jpg";
-import mobileLegends from "assets/logo/mobile-legends.jpg";
-import genshinImpact from "assets/logo/genshin-impact.jpeg";
-import stateOfSurvival from "assets/logo/state-of-survival.jpeg";
+import undawnMain from "assets/logo/undawn-main.png";
+import arenaBreakoutMain from "assets/logo/arena-breakout-main.jpg";
+import trovoElixirsMain from "assets/logo/trovo-elixirs-main.png";
 import undawnLogo from "assets/logo/undawn.png";
+import * as arenaBreakoutImages from "../assets/arena-breakout";
 
 const elixirCards = [
   {
@@ -145,7 +145,7 @@ const pubgCards = [
   },
   {
     value: 12000,
-    title: "16200 UC + 4200 FREE",
+    title: "12000 UC + 4200 FREE",
     text: "16200 Unknown Cash",
     cost: "₽ 16,139.90",
     src: thirtyThousandUC,
@@ -168,7 +168,7 @@ const pubgCards = [
 
 const undawnCards = [
   {
-    value: 1,
+    value: 60,
     title: "60 UC",
     text: "60 Unknown Cash",
     cost: "₽ 75.76",
@@ -204,7 +204,7 @@ const undawnCards = [
   },
   {
     value: 12000,
-    title: "16200 UC + 4200 FREE",
+    title: "12000 UC + 4200 FREE",
     text: "16200 Unknown Cash",
     cost: "₽ 18,875.26",
     src: undawnLogo,
@@ -222,6 +222,65 @@ const undawnCards = [
     text: "32400 Unknown Cash",
     cost: "₽ 30,824.74",
     src: undawnLogo,
+  },
+];
+
+const arenaBreakoutCards = [
+  {
+    value: 60,
+    title: "60 UC",
+    text: "60 Unknown Cash",
+    cost: "₽ 75.76",
+    src: arenaBreakoutImages.ab1,
+  },
+  {
+    value: 300,
+    title: "300 UC + 25 FREE",
+    text: "325 Unknown Cash",
+    cost: "₽ 380.41",
+    src: arenaBreakoutImages.ab1,
+  },
+  {
+    value: 600,
+    title: "600 UC + 60 FREE",
+    text: "660 Unknown Cash",
+    cost: "₽ 772.16",
+    src: arenaBreakoutImages.ab1,
+  },
+  {
+    value: 1500,
+    title: "1500 UC + 300 FREE",
+    text: "1800 Unknown Cash",
+    cost: "₽ 1,988.66",
+    src: arenaBreakoutImages.ab1,
+  },
+  {
+    value: 6000,
+    title: "6000 UC + 2100 FREE",
+    text: "8100 Unknown Cash",
+    cost: "₽ 7,975.26",
+    src: arenaBreakoutImages.ab2,
+  },
+  {
+    value: 12000,
+    title: "12000 UC + 4200 FREE",
+    text: "16200 Unknown Cash",
+    cost: "₽ 18,875.26",
+    src: arenaBreakoutImages.ab3,
+  },
+  {
+    value: 18000,
+    title: "18000 UC + 6300 FREE",
+    text: "24300 Unknown Cash",
+    cost: "₽ 23,195.88",
+    src: arenaBreakoutImages.ab4,
+  },
+  {
+    value: 24000,
+    title: "24000 UC + 8400 FREE",
+    text: "32400 Unknown Cash",
+    cost: "₽ 30,824.74",
+    src: arenaBreakoutImages.ab5,
   },
 ];
 
@@ -258,6 +317,30 @@ const managers = [
   },
 ];
 
+const pubgHowGameWorks = [{
+  title: "Как Пополнить Мой счет в PUBG MOBILE?",
+  text: "Для покупки Unknown Cash Вам необходимо, выбрать один из сетов выше и оплатить Ваш заказ!При оплате необходимо указать Ваш активный Email, на него Вам придет код после завершения оплаты.В случае, возникновения вопросов, вы всегда можете обратиться за помощью к нашей службе поддержки!"
+}, {
+  title: "Как получить бонусы за покупки?",
+  text: "Our managers are always ready to answer your questions. You can call us during the weekends and at night. Also, you can visit our office for a personal consultation."
+}];
+
+const arenaBreakoutHowGameWorks = [{
+  title: "Как Пополнить Мой счет в ARENA BREAKOUT",
+  text: "Для покупки Unknown Cash Вам необходимо, выбрать один из сетов выше и оплатить Ваш заказ!При оплате необходимо указать Ваш активный Email, на него Вам придет код после завершения оплаты.В случае, возникновения вопросов, вы всегда можете обратиться за помощью к нашей службе поддержки!"
+}, {
+  title: "Как получить бонусы за покупки?",
+  text: "Our managers are always ready to answer your questions. You can call us during the weekends and at night. Also, you can visit our office for a personal consultation."
+}];
+
+const undawnHowGameWorks = [{
+  title: "Как Пополнить Мой счет в UNDAWN?",
+  text: "Для покупки Unknown Cash Вам необходимо, выбрать один из сетов выше и оплатить Ваш заказ!При оплате необходимо указать Ваш активный Email, на него Вам придет код после завершения оплаты.В случае, возникновения вопросов, вы всегда можете обратиться за помощью к нашей службе поддержки!"
+}, {
+  title: "Как получить бонусы за покупки?",
+  text: "Our managers are always ready to answer your questions. You can call us during the weekends and at night. Also, you can visit our office for a personal consultation."
+}];
+
 export const PAYMENT_TYPE = {
   binance: "binance",
   card: "card",
@@ -279,6 +362,10 @@ export const BROKER_LINKS = {
   qiwi: "/qiwi/qiwi-invoice-v2?",
   pubgm: "/monetix/payin?",
   trovolive: "/trovo/elixir-payment?",
+};
+
+export const REDEEM_CODES = {
+  paymentRequest: "/redeem-codes/payment-request?",
 };
 
 export const PAYMENTS_LIST = [
@@ -304,11 +391,11 @@ export const PAYMENTS_LIST = [
   },
 ];
 
-export const PAYMENTS_LIST_BINANCE = [
+export const PAYMENTS_LIST_TROVO_LIVE = [
   {
-    name: PAYMENT_TYPE_BINANCE.binance,
-    redirect_link: BROKER_LINKS.binance,
-    image: binanceImage,
+    name: PAYMENT_TYPE_BINANCE.qiwi,
+    redirect_link: BROKER_LINKS.qiwi,
+    image: qiwiImage,
   },
   {
     name: PAYMENT_TYPE_BINANCE.card,
@@ -316,15 +403,15 @@ export const PAYMENTS_LIST_BINANCE = [
     image: cardImage,
   },
   // {
+  //   name: PAYMENT_TYPE_BINANCE.binance,
+  //   redirect_link: BROKER_LINKS.binance,
+  //   image: binanceImage,
+  // },
+  // {
   //   name: PAYMENT_TYPE.freekassa,
   //   redirect_link: BROKER_LINKS.freekassa,
   //   image: freekassaImage,
   // },
-  {
-    name: PAYMENT_TYPE_BINANCE.qiwi,
-    redirect_link: BROKER_LINKS.qiwi,
-    image: qiwiImage,
-  },
 ];
 
 export const CURRENCY_TYPE = {
@@ -337,26 +424,51 @@ export const otherGames = [
   {
     name: "PUBG UC CODE",
     imgSrc: pubgLogo,
+    redirectLink: "pubg-shop",
   },
   {
-    name: (
-      <>
-        MOBILE LEGENDS:
-        <br />
-        BANG BANG TOP UP
-      </>
-    ),
-    imgSrc: mobileLegends,
+    name: "TROVO ELIXIRS",
+    imgSrc: trovoElixirsMain,
+    redirectLink: "trovo-shop",
   },
   {
-    name: "GENSHIN IMPACT",
-    imgSrc: genshinImpact,
+    name: "UNDAWN",
+    imgSrc: undawnMain,
+    redirectLink: "undawn-shop",
   },
   {
-    name: "STATE OF SURVIVAL TOP UP",
-    imgSrc: stateOfSurvival,
+    name: "ARENA BREAKOUT",
+    imgSrc: arenaBreakoutMain,
+    redirectLink: "arena-breakout-shop",
   },
 ];
+
+export const PUBG = {
+  gridInfo: {
+    title: "PUBG MOBILE",
+    cards: pubgCards,
+    productType: "pubgm_redeem_code",
+  },
+  howGameWorks: pubgHowGameWorks,
+};
+
+export const ARENA_BREAKOUT = {
+  gridInfo: {
+    title: "ARENA BREAKOUT",
+    cards: arenaBreakoutCards,
+    productType: "arena_breakout_code",
+  },
+  howGameWorks: arenaBreakoutHowGameWorks,
+};
+
+export const UNDAWN = {
+  gridInfo: {
+    title: "UNDAWN",
+    cards: undawnCards,
+    productType: "undawn_redeem_code",
+  },
+  howGameWorks: undawnHowGameWorks,
+};
 
 const constants = {
   elixirCards,
@@ -364,6 +476,7 @@ const constants = {
   managers,
   otherGames,
   undawnCards,
+  arenaBreakoutCards,
 };
 
 export default constants;

@@ -1,0 +1,63 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.how-game-works-wrapper {
+  display: flex;
+  justify-content: center;
+
+  min-width: 464px;
+  max-width: 464px;
+
+  @media (min-width: 744px) {
+    min-width: 700px;
+    max-width: 700px;
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 900px;
+    max-width: 900px;
+  }
+
+  @media (min-width: 1920px) {
+    min-width: 1200px;
+    max-width: 1200px;
+  }
+}
+
+.how-game-works {
+  @include flex-column-center();
+
+  width: 100%;
+  row-gap: 45px;
+  align-items: center;
+}
+
+.how-game-works__title {
+  font-size: 38px;
+  color: $white;
+
+  // @media(min-width:744px) {
+  //   align-self: flex-start;
+  // }
+}
+
+.how-game-works__articles {
+  @include flex-column-center();
+
+  align-items: flex-start;
+  row-gap: 20px;
+  color: $white;
+  width: 100%;
+}
+
+.article__checkmark {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 55px;
+  height: 55px;
+}
+
+.accordion-element {
+  color: white;
+}
